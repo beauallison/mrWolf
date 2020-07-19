@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Time Extension",
+  "version": "0.1",
+  "chrome_url_overrides": {
+    "newtab": "./index.html"
+  },
+  "permissions": [],
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "54.0a1"
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; connect-src ws://localhost:*/"
+}
