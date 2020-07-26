@@ -1,4 +1,3 @@
-const HTMLPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const ExtensionReloader = require('webpack-extension-reloader');
@@ -13,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.html'],
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   },
   module: {
@@ -38,11 +37,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new HTMLPlugin({
-      chunks: ['index'],
-      filename: 'index.html',
-    }),
     new CopyPlugin([
+      { from: './src/index.html', to: './index.html' },
       { from: './src/fonts/', to: './fonts' },
       { from: './src/manifest.json', to: './manifest.json' },
     ]),
