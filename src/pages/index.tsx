@@ -27,7 +27,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <Head title={'Timez'} schema={schema} description={schema.description} />
+      <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
       {home && <TimeViewer home={home} cities={cities} />}
       <Settings
         home={home}
