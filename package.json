@@ -1,9 +1,9 @@
 {
   "version": "1.0.1",
-  "name": "timez-extension",
+  "name": "mr-wolf",
   "repository": {
     "type": "git",
-    "url": "https://github.com/beauallison/timeExtension"
+    "url": "https://github.com/beauallison/mrWolf"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -c webpack.config.js --mode production",
