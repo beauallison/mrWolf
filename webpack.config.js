@@ -1,6 +1,5 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
-const ExtensionReloader = require('webpack-extension-reloader');
 const ManifestVersionSyncPlugin = require('webpack-manifest-version-sync-plugin');
 
 module.exports = {
@@ -42,9 +41,6 @@ module.exports = {
       { from: './src/fonts/', to: './fonts' },
       { from: './src/manifest.json', to: './manifest.json' },
     ]),
-    new ExtensionReloader({
-      manifest: path.resolve(__dirname, './src/manifest.json'),
-    }),
     new ManifestVersionSyncPlugin(),
   ],
   optimization: {
