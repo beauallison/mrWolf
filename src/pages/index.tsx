@@ -9,8 +9,8 @@ import * as LocalStorage from '../localStorage';
 const schema = {
   '@context': 'http://schema.org',
   '@type': 'Organization',
-  name: 'Timez',
-  url: 'https://timez.io',
+  name: 'Mr Wolf',
+  url: 'https://mrwolf.app',
   description: 'Sync with friends in multiple timezones',
 };
 

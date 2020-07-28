@@ -2,8 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Icon = styled.svg`
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   fill: ${(props) => props.theme.colors.surface};
 `;
 
