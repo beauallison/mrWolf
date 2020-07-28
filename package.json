@@ -1,0 +1,52 @@
+{
+  "version": "1.0.1",
+  "name": "mr-wolf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beauallison/mrWolf"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack -c webpack.config.js --mode production",
+    "watch": "cross-env NODE_ENV=development webpack -c webpack.config.js --mode development -w"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.10.4",
+    "@svgr/webpack": "^4.3.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-emotion": "^10.0.33",
+    "copy-webpack-plugin": "^5.0.4",
+    "cross-env": "^6.0.3",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.0.0-beta.8",
+    "prettier": "^2.0.5",
+    "ts-loader": "^8.0.1",
+    "typescript": "^3.9.7",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-manifest-version-sync-plugin": "^0.0.3"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "classnames": "^2.2.6",
+    "core-js": "^3.3.3",
+    "emotion-theming": "^10.0.27",
+    "lodash": "^4.17.15",
+    "moment": "^2.25.3",
+    "moment-timezone": "^0.5.28",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-select": "^3.1.0",
+    "react-switch": "^5.0.1",
+    "react-window": "^1.8.5",
+    "typeface-inter": "^3.12.0",
+    "typeface-metropolis": "0.0.74",
+    "webextension-polyfill": "^0.5.0"
+  }
+}
