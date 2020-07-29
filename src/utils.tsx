@@ -21,6 +21,6 @@ export interface IGenerateTime {
 }
 
 export const generateTime = (props: IGenerateTime) => {
-  const format = props.displaySeconds ? 'HH:MM:ss' : 'HH:MM';
+  const format = props.displaySeconds ? 'HH:mm:ss' : 'HH:mm';
   return moment().tz(props.timezone).format(format);
 };
