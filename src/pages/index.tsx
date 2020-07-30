@@ -22,7 +22,7 @@ const Index = () => {
 
   const [home, setHome] = useState(savedHome);
   const [cities, setCities] = useState(savedCities || []);
-  const [display24HrTime, setDisplay24HrTime] = useState(savedDisplay24HrTime || true);
+  const [display24HourTime, setDisplay24HourTime] = useState(savedDisplay24HrTime || true);
   const [displaySeconds, setDisplaySeconds] = useState(savedDisplaySeconds || true);
 
   return (
@@ -34,8 +34,8 @@ const Index = () => {
         setHome={setHome}
         cities={cities}
         setCities={setCities}
-        display24HrTime={display24HrTime}
-        setDisplay24HourTime={setDisplay24HrTime}
+        display24HourTime={display24HourTime}
+        setDisplay24HourTime={setDisplay24HourTime}
         displaySeconds={displaySeconds}
         setDisplaySeconds={setDisplaySeconds}
       />
