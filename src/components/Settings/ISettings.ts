@@ -6,7 +6,7 @@ export default interface ISettings {
   cities: ICity[];
   setCities: void;
   display24HourTime: boolean;
-  setDisplay24HourTime: void;
+  toggleDisplay24HourTime: void;
   displaySeconds: boolean;
-  setDisplaySeconds: void;
+  toggleDisplaySeconds: void;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import CitySelector from './CitySelector';
+import Checkbox from './Checkbox';
 import ISettings from './ISettings';
 
 export interface IPopup extends ISettings {
@@ -32,13 +33,27 @@ const Title = styled(Text)`
   margin-bottom: 5px;
 `;
 
-export default ({ home, setHome, cities, setCities, isVisible }: IPopup) => (
-  <Container isVisible={isVisible}>
-    <Title>Home</Title>
-    <CitySelector value={home} onChange={setHome} />
-    <Title>Other Cities</Title>
-    <CitySelector value={cities} isMulti={true} onChange={setCities} />
-    <Title>Display 24 Hour Time</Title>
-    <Title>Display Seconds</Title>
-  </Container>
-);
+export default ({
+  home,
+  setHome,
+  cities,
+  setCities,
+  display24HourTime,
+  toggleDisplay24HourTime,
+  displaySeconds,
+  toggleDisplaySeconds,
+  isVisible,
+}: IPopup) => {
+  return (
+    <Container isVisible={isVisible}>
+      <Title>Home</Title>
+      <CitySelector value={home} onChange={setHome} />
+      <Title>Other Cities</Title>
+      <CitySelector value={cities} isMulti={true} onChange={setCities} />
+      <Title>Display 24 Hour Time</Title>
+      <Checkbox checked={display24HourTime} onChange={toggleDisplay24HourTime} />
+      <Title>Display Seconds</Title>
+      <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
+    </Container>
+  );
+};

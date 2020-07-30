@@ -25,6 +25,18 @@ const Index = () => {
   const [display24HourTime, setDisplay24HourTime] = useState(savedDisplay24HrTime || true);
   const [displaySeconds, setDisplaySeconds] = useState(savedDisplaySeconds || true);
 
+  const toggleDisplay24HourTime = async () => {
+    const value = !display24HourTime;
+    await setDisplay24HourTime(value);
+    return LocalStorage.saveDisplay24HrTime(value);
+  };
+
+  const toggleDisplaySeconds = async () => {
+    const value = !displaySeconds;
+    await setDisplaySeconds(value);
+    return LocalStorage.saveDisplaySeconds(value);
+  };
+
   return (
     <Layout>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
@@ -35,9 +47,9 @@ const Index = () => {
         cities={cities}
         setCities={setCities}
         display24HourTime={display24HourTime}
-        setDisplay24HourTime={setDisplay24HourTime}
+        toggleDisplay24HourTime={toggleDisplay24HourTime}
         displaySeconds={displaySeconds}
-        setDisplaySeconds={setDisplaySeconds}
+        toggleDisplaySeconds={toggleDisplaySeconds}
       />
     </Layout>
   );
