@@ -23,6 +23,15 @@ const Container = styled.div`
   padding: 30px;
 `;
 
+const SettingsContainer = styled.div`
+  max-width: 95%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 const Text = styled.p`
   color: ${(props) => props.theme.colors.onSurface};
 `;
@@ -31,6 +40,16 @@ const Title = styled(Text)`
   font-family: 'Metropolis';
   margin-left: 2px;
   margin-bottom: 5px;
+`;
+
+const CitySelectorContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CheckboxContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export default ({
@@ -46,14 +65,24 @@ export default ({
 }: IPopup) => {
   return (
     <Container isVisible={isVisible}>
-      <Title>Home</Title>
-      <CitySelector value={home} onChange={setHome} />
-      <Title>Other Cities</Title>
-      <CitySelector value={cities} isMulti={true} onChange={setCities} />
-      <Title>Display 24 Hour Time</Title>
-      <Checkbox checked={display24HourTime} onChange={toggleDisplay24HourTime} />
-      <Title>Display Seconds</Title>
-      <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
+      <SettingsContainer>
+        <CitySelectorContainer>
+          <Title>Home</Title>
+          <CitySelector value={home} onChange={setHome} />
+        </CitySelectorContainer>
+        <CitySelectorContainer>
+          <Title>Other Cities</Title>
+          <CitySelector value={cities} isMulti={true} onChange={setCities} />
+        </CitySelectorContainer>
+        <CheckboxContainer>
+          <Title>Display 24 Hour Time</Title>
+          <Checkbox checked={display24HourTime} onChange={toggleDisplay24HourTime} />
+        </CheckboxContainer>
+        <CheckboxContainer>
+          <Title>Display Seconds</Title>
+          <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
+        </CheckboxContainer>
+      </SettingsContainer>
     </Container>
   );
 };

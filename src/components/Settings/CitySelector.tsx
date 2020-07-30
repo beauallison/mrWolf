@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import Select from 'react-select';
 import { FixedSizeList as List } from 'react-window';
 import { Styles } from './CitySelectStyles';
@@ -20,10 +19,6 @@ const MenuList = ({ options, children, maxHeight, getValue }) => {
   );
 };
 
-const StyledSelect = styled(Select)`
-  width: 300px;
-`;
-
 export interface IProps {
   value: ICity | ICity[];
   isMulti?: boolean;
@@ -31,7 +26,7 @@ export interface IProps {
 }
 
 export default ({ value, isMulti, onChange }: IProps) => (
-  <StyledSelect
+  <Select
     components={{ MenuList }}
     options={generateOptions()}
     styles={Styles}
