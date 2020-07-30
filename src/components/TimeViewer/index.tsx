@@ -16,11 +16,13 @@ const Container = styled.div`
 export interface IProps {
   cities: ICity[];
   home: ICity;
+  display24HourTime?: boolean;
+  displaySeconds?: boolean;
 }
 
-export default (props: IProps) => (
+export default ({ home, cities, ...props }: IProps) => (
   <Container>
-    <Home {...props.home} />
-    <Cities cities={props.cities} />
+    <Home {...home} {...props} />
+    <Cities cities={cities} {...props} />
   </Container>
 );

@@ -17,10 +17,12 @@ export const citiesList = (): ICity[] =>
 
 export interface IGenerateTime {
   timezone: string;
+  display24HourTime?: boolean;
   displaySeconds?: boolean;
 }
 
 export const generateTime = (props: IGenerateTime) => {
-  const format = props.displaySeconds ? 'HH:mm:ss' : 'HH:mm';
+  const hourFormat = props.display24HourTime ? 'HH:mm' : 'hh:mm';
+  const format = props.displaySeconds ? `${hourFormat}:ss` : hourFormat;
   return moment().tz(props.timezone).format(format);
 };

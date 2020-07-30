@@ -40,7 +40,9 @@ const Index = () => {
   return (
     <Layout>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
-      {home && <TimeViewer home={home} cities={cities} />}
+      {home && (
+        <TimeViewer home={home} cities={cities} display24HourTime={display24HourTime} displaySeconds={displaySeconds} />
+      )}
       <Settings
         home={home}
         setHome={setHome}

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import moment from 'moment-timezone';
-import ICity from '../../../ICity';
 import { generateTime } from '../../../utils';
+import ICity from '../../../ICity';
 
 const Container = styled.div`
   display: flex;
@@ -34,25 +33,28 @@ const Text = styled.p`
   margin-top: 0px;
 `;
 
-export default (props: ICity) => {
-  const { timezone } = props;
-  const [currentTime, setCurrentTime] = useState(generateTime({ timezone }));
+export interface IProps extends ICity {
+  display24HourTime?: boolean;
+}
+
+export default ({ name, country, ...timeProps }: IProps) => {
+  const [currentTime, setCurrentTime] = useState(generateTime(timeProps));
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setCurrentTime(generateTime({ timezone }));
+      setCurrentTime(generateTime(timeProps));
     }, 1000);
 
     return () => {
       window.clearInterval(timer);
     };
-  }, []);
+  }, [timeProps]);
 
   return (
     <Container>
       <Time>{currentTime}</Time>
-      <Text>{props.name}</Text>
-      <Text>{props.country}</Text>
+      <Text>{name}</Text>
+      <Text>{country}</Text>
     </Container>
   );
 };
