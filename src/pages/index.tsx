@@ -22,19 +22,23 @@ const Index = () => {
 
   const [home, setHome] = useState(savedHome);
   const [cities, setCities] = useState(savedCities || []);
-  const [display24HourTime, setDisplay24HourTime] = useState(savedDisplay24HrTime || true);
-  const [displaySeconds, setDisplaySeconds] = useState(savedDisplaySeconds || true);
+  const [display24HourTime, setDisplay24HourTime] = useState(
+    typeof savedDisplay24HrTime !== 'undefined' ? savedDisplay24HrTime : true,
+  );
+  const [displaySeconds, setDisplaySeconds] = useState(
+    typeof savedDisplaySeconds !== 'undefined' ? savedDisplaySeconds : true,
+  );
 
   const toggleDisplay24HourTime = async () => {
     const value = !display24HourTime;
     await setDisplay24HourTime(value);
-    return LocalStorage.saveDisplay24HrTime(value);
+    LocalStorage.saveDisplay24HrTime(value);
   };
 
   const toggleDisplaySeconds = async () => {
     const value = !displaySeconds;
     await setDisplaySeconds(value);
-    return LocalStorage.saveDisplaySeconds(value);
+    LocalStorage.saveDisplaySeconds(value);
   };
 
   return (
