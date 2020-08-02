@@ -14,7 +14,7 @@ const MenuList = ({ options, children, maxHeight, getValue }) => {
 
   return (
     <List height={maxHeight} itemCount={children.length} itemSize={HEIGHT} initialScrollOffset={initialOffset}>
-      {({ index, style }) => <div style={style}>{children[index]}</div>}
+      {({ index, style }) => <div style={{ ...style, whiteSpace: 'nowrap' }}>{children[index]}</div>}
     </List>
   );
 };
