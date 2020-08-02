@@ -13,12 +13,15 @@ const Container = styled.div`
 
 export interface IProps {
   cities: ICity[];
+  display24HourTime?: boolean;
 }
 
-export default (props: IProps) => (
-  <Container>
-    {props.cities.map((city) => (
-      <City {...city} />
-    ))}
-  </Container>
-);
+export default ({ cities, display24HourTime }: IProps) => {
+  return (
+    <Container>
+      {cities.map((city) => (
+        <City {...city} display24HourTime={display24HourTime} />
+      ))}
+    </Container>
+  );
+};

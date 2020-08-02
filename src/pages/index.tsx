@@ -22,22 +22,40 @@ const Index = () => {
 
   const [home, setHome] = useState(savedHome);
   const [cities, setCities] = useState(savedCities || []);
-  const [display24HrTime, setDisplay24HrTime] = useState(savedDisplay24HrTime || true);
-  const [displaySeconds, setDisplaySeconds] = useState(savedDisplaySeconds || true);
+  const [display24HourTime, setDisplay24HourTime] = useState(
+    typeof savedDisplay24HrTime !== 'undefined' ? savedDisplay24HrTime : true,
+  );
+  const [displaySeconds, setDisplaySeconds] = useState(
+    typeof savedDisplaySeconds !== 'undefined' ? savedDisplaySeconds : true,
+  );
+
+  const toggleDisplay24HourTime = async () => {
+    const value = !display24HourTime;
+    await setDisplay24HourTime(value);
+    LocalStorage.saveDisplay24HrTime(value);
+  };
+
+  const toggleDisplaySeconds = async () => {
+    const value = !displaySeconds;
+    await setDisplaySeconds(value);
+    LocalStorage.saveDisplaySeconds(value);
+  };
 
   return (
     <Layout>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
-      {home && <TimeViewer home={home} cities={cities} />}
+      {home && (
+        <TimeViewer home={home} cities={cities} display24HourTime={display24HourTime} displaySeconds={displaySeconds} />
+      )}
       <Settings
         home={home}
         setHome={setHome}
         cities={cities}
         setCities={setCities}
-        display24HrTime={display24HrTime}
-        setDisplay24HourTime={setDisplay24HrTime}
+        display24HourTime={display24HourTime}
+        toggleDisplay24HourTime={toggleDisplay24HourTime}
         displaySeconds={displaySeconds}
-        setDisplaySeconds={setDisplaySeconds}
+        toggleDisplaySeconds={toggleDisplaySeconds}
       />
     </Layout>
   );

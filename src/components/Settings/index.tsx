@@ -10,15 +10,16 @@ const Container = styled.div`
   right: 5%;
 `;
 
-export default ({ home, setHome, cities, setCities }: ISettings) => {
-  const [popupIsVisible, setPopupIsVisible] = useState(false);
+export default (props: ISettings) => {
+  const openByDefault = props.home === null && props.cities.length === 0;
+  const [popupIsVisible, setPopupIsVisible] = useState(openByDefault);
 
   const togglePopup = () => setPopupIsVisible(!popupIsVisible);
 
   return (
     <Container>
       <Icon onClick={togglePopup} />
-      <Popup isVisible={popupIsVisible} home={home} setHome={setHome} cities={cities} setCities={setCities} />
+      <Popup isVisible={popupIsVisible} {...props} />
     </Container>
   );
 };

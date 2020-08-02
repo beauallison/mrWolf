@@ -7,11 +7,13 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -c webpack.config.js --mode production",
-    "watch": "cross-env NODE_ENV=development webpack -c webpack.config.js --mode development -w"
+    "watch": "cross-env NODE_ENV=development webpack -c webpack.config.js --mode development -w",
+    "start:firefox": "web-ext run --source-dir ./build"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.10.4",
@@ -25,11 +27,13 @@
     "prettier": "^2.0.5",
     "ts-loader": "^8.0.1",
     "typescript": "^3.9.7",
+    "web-ext": "^5.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-manifest-version-sync-plugin": "^0.0.3"
   },
   "dependencies": {
+    "@babel/runtime": "^7.10.5",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "classnames": "^2.2.6",
