@@ -32,9 +32,10 @@ export default ({ value, isMulti, onChange }: IProps) => (
     styles={Styles}
     placeholder={'Select'}
     isMulti={isMulti}
+    isClearable={true}
     value={value ? (isMulti ? citiesToValues(value) : cityToValue(value)) : undefined}
     onChange={(v: IValue | IValue[]) => {
-      if (v === null) return onChange([]);
+      if (v === null) return isMulti ? onChange([]) : onChange(null);
       const newValue = isMulti ? valuesToCities(v) : valueToCity(v);
       isMulti ? LocalStorage.saveCities(newValue) : LocalStorage.saveHome(newValue);
       return onChange(newValue);
