@@ -40,9 +40,7 @@ export const Styles = {
   control: (styles, { isFocused }) => ({
     ...styles,
     backgroundColor: theme.colors.background,
-    borderColor: isFocused
-      ? theme.colors.onBackground
-      : theme.colors.background,
+    borderColor: isFocused ? theme.colors.onBackground : theme.colors.background,
 
     boxShadow: 0,
     ':hover': {
