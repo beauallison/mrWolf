@@ -11,7 +11,8 @@ const Container = styled.div`
 `;
 
 export default (props: ISettings) => {
-  const [popupIsVisible, setPopupIsVisible] = useState(false);
+  const openByDefault = props.home === null && props.cities.length === 0;
+  const [popupIsVisible, setPopupIsVisible] = useState(openByDefault);
 
   const togglePopup = () => setPopupIsVisible(!popupIsVisible);
 
