@@ -15,12 +15,6 @@ export const Container = styled.div`
   padding: 30px;
 `;
 
-export const SettingsContainer = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
-`;
-
 export const Text = styled.p`
   color: ${(props) => props.theme.colors.onSurface};
 `;

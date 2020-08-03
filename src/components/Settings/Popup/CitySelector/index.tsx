@@ -41,7 +41,11 @@ export default ({ value, isMulti, onChange }: IProps) => (
     isClearable={true}
     value={value ? (isMulti ? citiesToValues(value) : cityToValue(value)) : undefined}
     onChange={(v: IValue | IValue[]) => {
-      if (v === null) return isMulti ? onChange([]) : onChange(null);
+      if (v === null) {
+        isMulti ? LocalStorage.saveCities(null) : LocalStorage.saveHome(null);
+        return isMulti ? onChange([]) : onChange(null);
+      }
+
       const newValue = isMulti ? valuesToCities(v) : valueToCity(v);
       isMulti ? LocalStorage.saveCities(newValue) : LocalStorage.saveHome(newValue);
       return onChange(newValue);

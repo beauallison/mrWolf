@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import TimeViewer from '../components/TimeViewer';
+import Welcome from '../components/Welcome';
 import Settings from '../components/Settings';
 import * as LocalStorage from '../localStorage';
 
@@ -44,8 +45,10 @@ const Index = () => {
   return (
     <Layout>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
-      {home && (
+      {home ? (
         <TimeViewer home={home} cities={cities} display24HourTime={display24HourTime} displaySeconds={displaySeconds} />
+      ) : (
+        <Welcome />
       )}
       <Settings
         home={home}
