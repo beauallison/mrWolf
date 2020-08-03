@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import Checkmark from './Checkmark';
 
 const StyledCheckbox = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 
   border: 1px solid ${(props) => (props.checked ? props.theme.colors.primary : props.theme.colors.onSurface)};
   border-radius: 4px;
