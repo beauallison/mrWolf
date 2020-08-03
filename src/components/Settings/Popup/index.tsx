@@ -45,16 +45,16 @@ export default ({
       <Title>Display Seconds</Title>
       <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
     </CheckboxContainer>
-    <TitleBold>Download the Extensions</TitleBold>
+    {/* <TitleBold>Download the Extensions</TitleBold>
     <Title>
       <ExtensionLink href="firefox-extension" target="_blank">
-        FireFox
+        Firefox
       </ExtensionLink>
       {' | '}
       <ExtensionLink href="chrome-extension" target="_blank">
         Chrome
       </ExtensionLink>
-    </Title>
+    </Title> */}
     <Title>
       With ❤️ by{' '}
       <GithubLink href="https://github.com/beauallison/" target="_blank">

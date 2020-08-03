@@ -35,15 +35,15 @@ export default () => (
     <Description>
       To get started select a <DescriptionBold>Home</DescriptionBold> from the Settings.
     </Description>
-    <Description>
+    {/* <Description>
       Available for{' '}
       <ExtensionLink href="firefox-extension" target="_blank">
-        FireFox
+        Firefox
       </ExtensionLink>
       {' and  '}
       <ExtensionLink href="chrome-extension" target="_blank">
         Chrome
       </ExtensionLink>
-    </Description>
+    </Description> */}
   </Container>
 );
