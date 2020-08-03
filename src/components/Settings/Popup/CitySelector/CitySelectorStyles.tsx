@@ -1,4 +1,4 @@
-import { theme } from '../theme';
+import { theme } from '../../../theme';
 
 const commonStyles = (styles) => ({
   ...styles,

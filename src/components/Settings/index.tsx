@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Icon from './Icon';
+import CogIcon from './CogIcon';
 import Popup from './Popup';
 import ISettings from './ISettings';
 
@@ -18,7 +18,7 @@ export default (props: ISettings) => {
 
   return (
     <Container>
-      <Icon onClick={togglePopup} />
+      <CogIcon onClick={togglePopup} />
       <Popup isVisible={popupIsVisible} {...props} />
     </Container>
   );

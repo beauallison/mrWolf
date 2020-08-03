@@ -2,9 +2,9 @@ import React from 'react';
 import Select from 'react-select';
 import { FixedSizeList as List } from 'react-window';
 import { Styles } from './CitySelectorStyles';
-import { IValue, cityToValue, citiesToValues, generateOptions, valueToCity, valuesToCities } from './utils';
-import ICity from '../../ICity';
-import * as LocalStorage from '../../localStorage';
+import { IValue, cityToValue, citiesToValues, generateOptions, valueToCity, valuesToCities } from '../../utils';
+import ICity from '../../../../ICity';
+import * as LocalStorage from '../../../../localStorage';
 
 const HEIGHT = 35;
 
@@ -25,10 +25,16 @@ export interface IProps {
   onChange: void;
 }
 
+const createLocalOptions = (value, isMulti) => {
+  if (!isMulti) generateOptions();
+  if (Array.isArray(value) && value.length > 5) return [];
+  return generateOptions();
+};
+
 export default ({ value, isMulti, onChange }: IProps) => (
   <Select
     components={{ MenuList }}
-    options={generateOptions()}
+    options={createLocalOptions(value, isMulti)}
     styles={Styles}
     placeholder={'Select'}
     isMulti={isMulti}
