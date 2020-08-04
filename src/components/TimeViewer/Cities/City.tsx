@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  min-width: 175px;
   margin-right: 70px;
   &:not(:first-child) {
     margin-left: 70px;

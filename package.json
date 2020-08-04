@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "0.0.1",
   "name": "mr-wolf",
   "repository": {
     "type": "git",
@@ -8,7 +8,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -c webpack.config.js --mode production",
     "watch": "cross-env NODE_ENV=development webpack -c webpack.config.js --mode development -w",
-    "start:firefox": "web-ext run --source-dir ./build"
+    "start:firefox": "web-ext run --source-dir ./build",
+    "build:release": "web-ext build --source-dir ./build"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

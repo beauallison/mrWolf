@@ -6,6 +6,7 @@ import ICity from '../../../ICity';
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 
   margin-left: 10%;
   margin-bottom: 3%;

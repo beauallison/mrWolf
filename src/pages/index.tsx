@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Head from '../components/Head';
 import TimeViewer from '../components/TimeViewer';
 import Welcome from '../components/Welcome';
+import Responsive from '../components/Responsive';
 import Settings from '../components/Settings';
 import * as LocalStorage from '../localStorage';
 
@@ -45,21 +46,29 @@ const Index = () => {
   return (
     <Layout>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
-      {home ? (
-        <TimeViewer home={home} cities={cities} display24HourTime={display24HourTime} displaySeconds={displaySeconds} />
-      ) : (
-        <Welcome />
-      )}
-      <Settings
-        home={home}
-        setHome={setHome}
-        cities={cities}
-        setCities={setCities}
-        display24HourTime={display24HourTime}
-        toggleDisplay24HourTime={toggleDisplay24HourTime}
-        displaySeconds={displaySeconds}
-        toggleDisplaySeconds={toggleDisplaySeconds}
-      />
+      <Responsive.Mobile />
+      <Responsive.Desktop>
+        {home ? (
+          <TimeViewer
+            home={home}
+            cities={cities}
+            display24HourTime={display24HourTime}
+            displaySeconds={displaySeconds}
+          />
+        ) : (
+          <Welcome />
+        )}
+        <Settings
+          home={home}
+          setHome={setHome}
+          cities={cities}
+          setCities={setCities}
+          display24HourTime={display24HourTime}
+          toggleDisplay24HourTime={toggleDisplay24HourTime}
+          displaySeconds={displaySeconds}
+          toggleDisplaySeconds={toggleDisplaySeconds}
+        />
+      </Responsive.Desktop>
     </Layout>
   );
 };
