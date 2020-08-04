@@ -35,6 +35,7 @@ export default () => (
     <Description>
       To get started select a <DescriptionBold>Home</DescriptionBold> from the Settings.
     </Description>
+    <Description>No Tracking. 100% Free.</Description>
     {/* <Description>
       Available for{' '}
       <ExtensionLink href="firefox-extension" target="_blank">
