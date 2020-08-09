@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import TimeViewer from '../components/TimeViewer';
@@ -7,6 +7,7 @@ import Welcome from '../components/Welcome';
 import Responsive from '../components/Responsive';
 import Settings from '../components/Settings';
 import * as LocalStorage from '../localStorage';
+import * as BrowserStorage from '../browserStorage';
 
 const schema = {
   '@context': 'http://schema.org',
@@ -42,6 +43,10 @@ const Index = () => {
     await setDisplaySeconds(value);
     LocalStorage.saveDisplaySeconds(value);
   };
+
+  useEffect(async () => {
+    await BrowserStorage.retrieveHome();
+  });
 
   return (
     <Layout>

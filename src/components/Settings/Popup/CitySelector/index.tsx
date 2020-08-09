@@ -5,6 +5,7 @@ import { Styles } from './CitySelectorStyles';
 import { IValue, cityToValue, citiesToValues, generateOptions, valueToCity, valuesToCities } from '../../utils';
 import ICity from '../../../../ICity';
 import * as LocalStorage from '../../../../localStorage';
+import * as BrowserStorage from '../../../../browserStorage';
 
 const HEIGHT = 35;
 
