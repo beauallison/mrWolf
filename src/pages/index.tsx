@@ -35,7 +35,9 @@ const Index = () => {
   };
 
   useEffect(async () => {
-    const [savedHome, savedCities, savedDisplay24HrTime, savedDisplaySeconds] = await Storage.getAll();
+    const result = await Storage.getAll();
+    if (!Array.isArray(result)) return;
+    const [savedHome, savedCities, savedDisplay24HrTime, savedDisplaySeconds] = result;
     await setHome(savedHome);
     await setCities(savedCities);
     await setDisplay24HourTime(savedDisplay24HrTime);

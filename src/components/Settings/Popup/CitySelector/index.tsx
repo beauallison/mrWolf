@@ -42,12 +42,12 @@ export default ({ value, isMulti, onChange }: IProps) => (
     value={value ? (isMulti ? citiesToValues(value) : cityToValue(value)) : undefined}
     onChange={async (v: IValue | IValue[]) => {
       if (v === null) {
-        (await isMulti) ? Storage.saveCities(null) : Storage.saveHome(null);
+        isMulti ? await Storage.saveCities(null) : await Storage.saveHome(null);
         return isMulti ? onChange([]) : onChange(null);
       }
 
       const newValue = isMulti ? valuesToCities(v) : valueToCity(v);
-      (await isMulti) ? Storage.saveCities(newValue) : Storage.saveHome(newValue);
+      isMulti ? await Storage.saveCities(newValue) : await Storage.saveHome(newValue);
       return onChange(newValue);
     }}
   />

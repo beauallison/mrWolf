@@ -24,8 +24,8 @@ export const getItem = async (KEY: string | string[]) => {
   const storage = await getStorage();
   if (!storage) return;
   const item = await storage.get(KEY);
-  if (!item) return null;
-  return JSON.parse(item);
+  if (Object.keys(item).length === 0 && item.constructor === Object) return null;
+  return item;
 };
 
 export const getAll = getItem;
