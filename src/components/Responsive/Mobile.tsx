@@ -54,15 +54,15 @@ export default () => (
         Beau Allison
       </GithubLink>
     </Description>
-    {/* <Description>
+    <Description>
       Available for{' '}
-      <ExtensionLink href="firefox-extension" target="_blank">
+      <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">
         Firefox
       </ExtensionLink>
-      {' and  '}
+      {/* {' and  '}
       <ExtensionLink href="chrome-extension" target="_blank">
         Chrome
-      </ExtensionLink>
-    </Description> */}
+      </ExtensionLink> */}
+    </Description>
   </Container>
 );

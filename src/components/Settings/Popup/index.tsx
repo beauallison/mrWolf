@@ -45,16 +45,16 @@ export default ({
       <Title>Display Seconds</Title>
       <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
     </CheckboxContainer>
-    {/* <TitleBold>Download the Extensions</TitleBold>
+    <TitleBold>Download the Extension</TitleBold>
     <Title>
-      <ExtensionLink href="firefox-extension" target="_blank">
+      <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">
         Firefox
       </ExtensionLink>
-      {' | '}
+      {/* {' | '}
       <ExtensionLink href="chrome-extension" target="_blank">
         Chrome
-      </ExtensionLink>
-    </Title> */}
+      </ExtensionLink> */}
+    </Title>
     <Title>
       With ❤️ by{' '}
       <GithubLink href="https://github.com/beauallison/" target="_blank">
