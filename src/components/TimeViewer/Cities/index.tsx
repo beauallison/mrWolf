@@ -4,9 +4,8 @@ import City from './City';
 import ICity from '../../../ICity';
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 33% 33% 34%;
 
   margin-left: 10%;
   margin-bottom: 3%;

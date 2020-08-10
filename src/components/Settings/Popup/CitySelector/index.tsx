@@ -25,16 +25,15 @@ export interface IProps {
   onChange: void;
 }
 
-const createLocalOptions = (value, isMulti) => {
+const createLocalOptions = (isMulti) => {
   if (!isMulti) generateOptions();
-  if (Array.isArray(value) && value.length > 5) return [];
   return generateOptions();
 };
 
 export default ({ value, isMulti, onChange }: IProps) => (
   <Select
     components={{ MenuList }}
-    options={createLocalOptions(value, isMulti)}
+    options={createLocalOptions(isMulti)}
     styles={Styles}
     placeholder={'Select'}
     isMulti={isMulti}
