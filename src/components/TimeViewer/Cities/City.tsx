@@ -9,10 +9,7 @@ const Container = styled.div`
   justify-content: center;
 
   min-width: 175px;
-  margin-right: 70px;
-  &:not(:first-child) {
-    margin-left: 70px;
-  }
+  margin-top: 20px;
 `;
 
 const Time = styled.h2`
