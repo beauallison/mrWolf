@@ -17,6 +17,7 @@ const schema = {
 };
 
 const Index = () => {
+  const [loaded, setLoaded] = useState(false);
   const [home, setHome] = useState();
   const [cities, setCities] = useState();
   const [display24HourTime, setDisplay24HourTime] = useState();
@@ -35,50 +36,50 @@ const Index = () => {
   };
 
   useEffect(() => {
-    let ignore = false;
-
-    async function loadSettings() {
+    async function load() {
+      if (loaded) return;
       const result = await Storage.getAll();
-      if (ignore || !Array.isArray(result)) return;
-      const [savedHome, savedCities, savedDisplay24HrTime, savedDisplaySeconds] = result;
-      savedHome && (await setHome(savedHome));
-      savedCities && (await setCities(savedCities));
-      savedDisplay24HrTime && (await setDisplay24HourTime(savedDisplay24HrTime));
-      savedDisplaySeconds && (await setDisplaySeconds(savedDisplaySeconds));
+      const { KEY_HOME, KEY_CITIES, KEY_DISPLAY_24HR_TIME, KEY_DISPLAY_SECONDS } = result;
+      KEY_HOME && (await setHome(KEY_HOME));
+      KEY_CITIES && (await setCities(KEY_CITIES));
+      KEY_DISPLAY_24HR_TIME && (await setDisplay24HourTime(KEY_DISPLAY_24HR_TIME));
+      KEY_DISPLAY_SECONDS && (await setDisplaySeconds(KEY_DISPLAY_SECONDS));
+      await setLoaded(true);
     }
 
-    loadSettings();
-    return () => {
-      ignore = true;
-    };
+    load();
   }, []);
 
   return (
     <Layout>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
-      <Responsive.Mobile />
-      <Responsive.Desktop>
-        {home ? (
-          <TimeViewer
-            home={home}
-            cities={cities}
-            display24HourTime={display24HourTime}
-            displaySeconds={displaySeconds}
-          />
-        ) : (
-          <Welcome />
-        )}
-        <Settings
-          home={home}
-          setHome={setHome}
-          cities={cities}
-          setCities={setCities}
-          display24HourTime={display24HourTime}
-          toggleDisplay24HourTime={toggleDisplay24HourTime}
-          displaySeconds={displaySeconds}
-          toggleDisplaySeconds={toggleDisplaySeconds}
-        />
-      </Responsive.Desktop>
+      {loaded && (
+        <>
+          <Responsive.Mobile />
+          <Responsive.Desktop>
+            {home ? (
+              <TimeViewer
+                home={home}
+                cities={cities}
+                display24HourTime={display24HourTime}
+                displaySeconds={displaySeconds}
+              />
+            ) : (
+              <Welcome />
+            )}
+            <Settings
+              home={home}
+              setHome={setHome}
+              cities={cities}
+              setCities={setCities}
+              display24HourTime={display24HourTime}
+              toggleDisplay24HourTime={toggleDisplay24HourTime}
+              displaySeconds={displaySeconds}
+              toggleDisplaySeconds={toggleDisplaySeconds}
+            />
+          </Responsive.Desktop>
+        </>
+      )}
     </Layout>
   );
 };

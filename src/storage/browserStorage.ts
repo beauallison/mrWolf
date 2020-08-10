@@ -17,14 +17,13 @@ const getStorage = async () => {
 export const saveItem = async (KEY: string, item: any) => {
   const storage = await getStorage();
   if (!storage) return;
-  return storage.set({ KEY: item });
+  return storage.set({ [KEY]: item });
 };
 
 export const getItem = async (KEY: string | string[]) => {
   const storage = await getStorage();
   if (!storage) return;
   const item = await storage.get(KEY);
-  if (Object.keys(item).length === 0 && item.constructor === Object) return null;
   return item;
 };
 
