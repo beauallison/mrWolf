@@ -10,8 +10,7 @@ const checkSyncIsAvailable = async () => {
 };
 
 const getStorage = async () => {
-  const storageUnavailable = isExtension();
-  if (storageUnavailable) return undefined;
+  if (!isExtension()) return undefined;
   const syncExists = await checkSyncIsAvailable();
   return syncExists ? browser.storage.sync : browser.storage.local;
 };
