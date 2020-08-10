@@ -12,7 +12,14 @@ export const getItem = (KEY: string) => {
   return JSON.parse(item);
 };
 
-export const getAll = (KEYS: string[]) => KEYS.map((KEY) => getItem(KEY));
+export const getAll = (KEYS: string[]) =>
+  KEYS.reduce(
+    (acc, value) => ({
+      ...acc,
+      [value]: getItem(value),
+    }),
+    {},
+  );
 
 export const clearAll = () => {
   if (localeStorageUnavailable) return;
