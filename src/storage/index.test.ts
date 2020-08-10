@@ -1,3 +1,8 @@
+jest.mock('./browserStorage');
+jest.mock('./isExtension', () => ({
+  isExtension: () => false,
+}));
+
 import {
   saveHome,
   getHome,

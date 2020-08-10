@@ -1,9 +1,9 @@
 import ICity from '../ICity';
 import * as BrowserStorage from './browserStorage';
 import * as LocalStorage from './localStorage';
+import { isExtension } from './isExtension';
 
-const IS_EXTENSION = typeof browser !== `undefined`;
-const Storage = IS_EXTENSION ? BrowserStorage : LocalStorage;
+const Storage = isExtension() ? BrowserStorage : LocalStorage;
 
 const KEY_HOME = 'KEY_HOME';
 const KEY_CITIES = 'KEY_CITIES';
