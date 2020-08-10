@@ -1,3 +1,5 @@
+import { isExtension } from './isExtension';
+
 const checkSyncIsAvailable = async () => {
   try {
     await browser.storage.sync.getBytesInUse();
@@ -8,8 +10,7 @@ const checkSyncIsAvailable = async () => {
 };
 
 const getStorage = async () => {
-  const storageUnavailable = typeof browser === `undefined`;
-  if (storageUnavailable) return undefined;
+  if (!isExtension()) return undefined;
   const syncExists = await checkSyncIsAvailable();
   return syncExists ? browser.storage.sync : browser.storage.local;
 };
