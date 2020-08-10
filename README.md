@@ -1,6 +1,7 @@
 # Mr Wolf
 
 ![CI](https://github.com/beauallison/mrWolf/workflows/CI/badge.svg)
+[![Percy.io](https://percy.io/static/images/percy-badge.svg)](https://percy.io/beauallison/mrWolf)
 
 An app made with React & Emotion for helping you sync timezones across the globe.
 
