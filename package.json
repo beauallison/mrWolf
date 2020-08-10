@@ -19,6 +19,7 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.10.4",
+    "@percy/agent": "^0.28.0",
     "@svgr/webpack": "^4.3.3",
     "@types/jest": "^26.0.9",
     "babel-loader": "^8.0.6",
