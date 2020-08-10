@@ -34,15 +34,24 @@ const Index = () => {
     await Storage.saveDisplaySeconds(value);
   };
 
-  useEffect(async () => {
-    const result = await Storage.getAll();
-    if (!Array.isArray(result)) return;
-    const [savedHome, savedCities, savedDisplay24HrTime, savedDisplaySeconds] = result;
-    await setHome(savedHome);
-    await setCities(savedCities);
-    await setDisplay24HourTime(savedDisplay24HrTime);
-    await setDisplaySeconds(savedDisplaySeconds);
-  });
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadSettings() {
+      const result = await Storage.getAll();
+      if (ignore || !Array.isArray(result)) return;
+      const [savedHome, savedCities, savedDisplay24HrTime, savedDisplaySeconds] = result;
+      savedHome && (await setHome(savedHome));
+      savedCities && (await setCities(savedCities));
+      savedDisplay24HrTime && (await setDisplay24HourTime(savedDisplay24HrTime));
+      savedDisplaySeconds && (await setDisplaySeconds(savedDisplaySeconds));
+    }
+
+    loadSettings();
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   return (
     <Layout>
