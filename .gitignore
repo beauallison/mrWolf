@@ -7,3 +7,5 @@ build
 .DS_Store
 yarn-error.log
 web-ext-artifacts
+
+coverage
