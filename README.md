@@ -1,6 +1,8 @@
 # Mr Wolf
 
-Helping you sync timezones across the globe.
+![CI](https://github.com/beauallison/mrWolf/workflows/CI/badge.svg)
+
+An app made with React & Emotion for helping you sync timezones across the globe.
 
 https://mrwolf.app
 
