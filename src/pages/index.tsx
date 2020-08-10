@@ -1,12 +1,12 @@
 import ReactDOM from 'react-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import TimeViewer from '../components/TimeViewer';
 import Welcome from '../components/Welcome';
 import Responsive from '../components/Responsive';
 import Settings from '../components/Settings';
-import * as LocalStorage from '../localStorage';
+import * as Storage from '../storage';
 
 const schema = {
   '@context': 'http://schema.org',
@@ -17,58 +17,69 @@ const schema = {
 };
 
 const Index = () => {
-  const savedHome = LocalStorage.retrieveHome();
-  const savedCities = LocalStorage.retrieveCities();
-  const savedDisplay24HrTime = LocalStorage.retrieveDisplay24HrTime();
-  const savedDisplaySeconds = LocalStorage.retrieveDisplaySeconds();
-
-  const [home, setHome] = useState(savedHome);
-  const [cities, setCities] = useState(savedCities || []);
-  const [display24HourTime, setDisplay24HourTime] = useState(
-    typeof savedDisplay24HrTime !== 'undefined' ? savedDisplay24HrTime : true,
-  );
-  const [displaySeconds, setDisplaySeconds] = useState(
-    typeof savedDisplaySeconds !== 'undefined' ? savedDisplaySeconds : true,
-  );
+  const [loaded, setLoaded] = useState(false);
+  const [home, setHome] = useState();
+  const [cities, setCities] = useState();
+  const [display24HourTime, setDisplay24HourTime] = useState();
+  const [displaySeconds, setDisplaySeconds] = useState();
 
   const toggleDisplay24HourTime = async () => {
     const value = !display24HourTime;
     await setDisplay24HourTime(value);
-    LocalStorage.saveDisplay24HrTime(value);
+    await Storage.saveDisplay24HrTime(value);
   };
 
   const toggleDisplaySeconds = async () => {
     const value = !displaySeconds;
     await setDisplaySeconds(value);
-    LocalStorage.saveDisplaySeconds(value);
+    await Storage.saveDisplaySeconds(value);
   };
+
+  useEffect(() => {
+    async function load() {
+      if (loaded) return;
+      const result = await Storage.getAll();
+      const { KEY_HOME, KEY_CITIES, KEY_DISPLAY_24HR_TIME, KEY_DISPLAY_SECONDS } = result;
+      KEY_HOME && (await setHome(KEY_HOME));
+      KEY_CITIES && (await setCities(KEY_CITIES));
+      KEY_DISPLAY_24HR_TIME && (await setDisplay24HourTime(KEY_DISPLAY_24HR_TIME));
+      KEY_DISPLAY_SECONDS && (await setDisplaySeconds(KEY_DISPLAY_SECONDS));
+      await setLoaded(true);
+    }
+
+    load();
+  }, []);
 
   return (
     <Layout>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
-      <Responsive.Mobile />
-      <Responsive.Desktop>
-        {home ? (
-          <TimeViewer
-            home={home}
-            cities={cities}
-            display24HourTime={display24HourTime}
-            displaySeconds={displaySeconds}
-          />
-        ) : (
-          <Welcome />
-        )}
-        <Settings
-          home={home}
-          setHome={setHome}
-          cities={cities}
-          setCities={setCities}
-          display24HourTime={display24HourTime}
-          toggleDisplay24HourTime={toggleDisplay24HourTime}
-          displaySeconds={displaySeconds}
-          toggleDisplaySeconds={toggleDisplaySeconds}
-        />
-      </Responsive.Desktop>
+      {loaded && (
+        <>
+          <Responsive.Mobile />
+          <Responsive.Desktop>
+            {home ? (
+              <TimeViewer
+                home={home}
+                cities={cities}
+                display24HourTime={display24HourTime}
+                displaySeconds={displaySeconds}
+              />
+            ) : (
+              <Welcome />
+            )}
+            <Settings
+              home={home}
+              setHome={setHome}
+              cities={cities}
+              setCities={setCities}
+              display24HourTime={display24HourTime}
+              toggleDisplay24HourTime={toggleDisplay24HourTime}
+              displaySeconds={displaySeconds}
+              toggleDisplaySeconds={toggleDisplaySeconds}
+            />
+          </Responsive.Desktop>
+        </>
+      )}
     </Layout>
   );
 };

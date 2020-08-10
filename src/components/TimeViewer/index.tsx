@@ -23,6 +23,6 @@ export interface IProps {
 export default ({ home, cities, ...props }: IProps) => (
   <Container>
     <Home {...home} {...props} />
-    <Cities cities={cities} {...props} />
+    {cities && <Cities cities={cities} {...props} />}
   </Container>
 );

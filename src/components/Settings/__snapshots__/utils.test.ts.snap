@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils should convert cities to value 1`] = `
+Object {
+  "city": Object {
+    "country": "United Arab Emirates",
+    "name": "Dubai",
+    "timezone": "Asia/Dubai",
+  },
+  "label": "Dubai, United Arab Emirates",
+  "value": "Dubai",
+}
+`;
+
+exports[`utils should convert cities to value 2`] = `
+Array [
+  Object {
+    "city": Object {
+      "country": "United Arab Emirates",
+      "name": "Dubai",
+      "timezone": "Asia/Dubai",
+    },
+    "label": "Dubai, United Arab Emirates",
+    "value": "Dubai",
+  },
+  Object {
+    "city": Object {
+      "country": "United Arab Emirates",
+      "name": "Dubai",
+      "timezone": "Asia/Dubai",
+    },
+    "label": "Dubai, United Arab Emirates",
+    "value": "Dubai",
+  },
+]
+`;
+
+exports[`utils should convert values to cities 1`] = `
+Object {
+  "country": "United Arab Emirates",
+  "name": "Dubai",
+  "timezone": "Asia/Dubai",
+}
+`;
+
+exports[`utils should convert values to cities 2`] = `
+Array [
+  Object {
+    "country": "United Arab Emirates",
+    "name": "Dubai",
+    "timezone": "Asia/Dubai",
+  },
+  Object {
+    "country": "United Arab Emirates",
+    "name": "Dubai",
+    "timezone": "Asia/Dubai",
+  },
+]
+`;
+
+exports[`utils should generate city options 1`] = `
+Object {
+  "city": Object {
+    "country": "United Arab Emirates",
+    "name": "Dubai",
+    "timezone": "Asia/Dubai",
+  },
+  "label": "Dubai, United Arab Emirates",
+  "value": "Dubai",
+}
+`;

@@ -4,7 +4,7 @@ import { FixedSizeList as List } from 'react-window';
 import { Styles } from './CitySelectorStyles';
 import { IValue, cityToValue, citiesToValues, generateOptions, valueToCity, valuesToCities } from '../../utils';
 import ICity from '../../../../ICity';
-import * as LocalStorage from '../../../../localStorage';
+import * as Storage from '../../../../storage';
 
 const HEIGHT = 35;
 
@@ -40,14 +40,14 @@ export default ({ value, isMulti, onChange }: IProps) => (
     isMulti={isMulti}
     isClearable={true}
     value={value ? (isMulti ? citiesToValues(value) : cityToValue(value)) : undefined}
-    onChange={(v: IValue | IValue[]) => {
+    onChange={async (v: IValue | IValue[]) => {
       if (v === null) {
-        isMulti ? LocalStorage.saveCities(null) : LocalStorage.saveHome(null);
+        isMulti ? await Storage.saveCities(null) : await Storage.saveHome(null);
         return isMulti ? onChange([]) : onChange(null);
       }
 
       const newValue = isMulti ? valuesToCities(v) : valueToCity(v);
-      isMulti ? LocalStorage.saveCities(newValue) : LocalStorage.saveHome(newValue);
+      isMulti ? await Storage.saveCities(newValue) : await Storage.saveHome(newValue);
       return onChange(newValue);
     }}
   />

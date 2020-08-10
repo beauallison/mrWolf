@@ -9,7 +9,8 @@
     "build": "cross-env NODE_ENV=production webpack -c webpack.config.js --mode production",
     "watch": "cross-env NODE_ENV=development webpack -c webpack.config.js --mode development -w",
     "start:firefox": "web-ext run --source-dir ./build",
-    "build:release": "web-ext build --source-dir ./build"
+    "build:release": "web-ext build --source-dir ./build",
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -19,13 +20,17 @@
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.10.4",
     "@svgr/webpack": "^4.3.3",
+    "@types/jest": "^26.0.9",
     "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.33",
     "copy-webpack-plugin": "^5.0.4",
     "cross-env": "^6.0.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.0-beta.8",
+    "jest": "^26.3.0",
+    "jest-localstorage-mock": "^2.4.3",
     "prettier": "^2.0.5",
+    "ts-jest": "^26.1.4",
     "ts-loader": "^8.0.1",
     "typescript": "^3.9.7",
     "web-ext": "^5.0.0",
@@ -53,5 +58,33 @@
     "typeface-inter": "^3.12.0",
     "typeface-metropolis": "0.0.74",
     "webextension-polyfill": "^0.5.0"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/out/"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/out/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
