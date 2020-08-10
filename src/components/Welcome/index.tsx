@@ -36,15 +36,15 @@ export default () => (
       To get started select a <DescriptionBold>Home</DescriptionBold> from the Settings.
     </Description>
     <Description>No Tracking. 100% Free.</Description>
-    {/* <Description>
+    <Description>
       Available for{' '}
-      <ExtensionLink href="firefox-extension" target="_blank">
+      <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">
         Firefox
       </ExtensionLink>
-      {' and  '}
+      {/* {' and  '}
       <ExtensionLink href="chrome-extension" target="_blank">
         Chrome
-      </ExtensionLink>
-    </Description> */}
+      </ExtensionLink> */}
+    </Description>
   </Container>
 );

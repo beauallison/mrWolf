@@ -17,12 +17,10 @@ export interface IProps {
   display24HourTime?: boolean;
 }
 
-export default ({ cities, display24HourTime }: IProps) => {
-  return (
-    <Container>
-      {cities.map((city) => (
-        <City {...city} display24HourTime={display24HourTime} />
-      ))}
-    </Container>
-  );
-};
+export default ({ cities, display24HourTime }: IProps) => (
+  <Container>
+    {cities.map((city) => (
+      <City {...city} display24HourTime={display24HourTime} />
+    ))}
+  </Container>
+);
