@@ -2,18 +2,20 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: npm install and test
-      run: |
-        npm install
-        npm test
+      - name: npm install and test
+        run: |
+          npm install
+          npm test
+          npm run build
+          npx percy snapshot build
