@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { fontWeight } from '../../constants';
 import { generateTime } from '../../utils';
 import ICity from '../../ICity';
 
@@ -23,7 +22,7 @@ const Time = styled.h1`
 
 const Text = styled.p`
   font-family: 'Inter';
-  font-weight: ${fontWeight.bold};
+  font-weight: 700;
 
   color: ${(props) => props.theme.colors.secondary};
 
