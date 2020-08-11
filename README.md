@@ -43,3 +43,5 @@ I would love your feedback! Please raise issues or if you would like to contribu
 ## Acknowledgements
 
 - Build process is based off the work by Eugene Dzhumak and their [React Web Extension Boilerplate](https://github.com/elforastero/react-browser-extension-boilerplate)
+
+- World Clock Icon by [Creative Stall](https://thenounproject.com/creativestall/)
