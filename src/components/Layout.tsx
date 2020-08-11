@@ -12,7 +12,7 @@ export default ({ children }) => (
           margin: 0px;
         }
 
-        @font-face {
+        /* @font-face {
           font-family: 'Inter';
           font-style: normal;
           font-weight: 100;
@@ -55,7 +55,7 @@ export default ({ children }) => (
           font-weight: 300;
           font-display: swap;
           src: url('./fonts/inter/Inter-LightItalic.woff2') format('woff2');
-        }
+        } */
 
         @font-face {
           font-family: 'Inter';
@@ -72,7 +72,7 @@ export default ({ children }) => (
           src: url('./fonts/inter/Inter-Italic.woff2') format('woff2');
         }
 
-        @font-face {
+        /* @font-face {
           font-family: 'Inter';
           font-style: normal;
           font-weight: 500;
@@ -85,7 +85,7 @@ export default ({ children }) => (
           font-weight: 500;
           font-display: swap;
           src: url('./fonts/inter/Inter-MediumItalic.woff2') format('woff2');
-        }
+        } */
 
         @font-face {
           font-family: 'Inter';
@@ -102,7 +102,7 @@ export default ({ children }) => (
           src: url('./fonts/inter/Inter-SemiBoldItalic.woff2') format('woff2');
         }
 
-        @font-face {
+        /* @font-face {
           font-family: 'Inter';
           font-style: normal;
           font-weight: 700;
@@ -145,11 +145,11 @@ export default ({ children }) => (
           font-weight: 900;
           font-display: swap;
           src: url('./fonts/inter/Inter-BlackItalic.woff2') format('woff2');
-        }
+        } */
 
         /* Metropolis */
 
-        @font-face {
+        /* @font-face {
           font-family: 'Metropolis';
           font-style: normal;
           font-display: swap;
@@ -183,7 +183,7 @@ export default ({ children }) => (
           font-weight: 300;
           src: local('Metropolis Light italic'), local('Metropolis-Lightitalic'),
             url('./fonts/metropolis/metropolis-300italic.woff2') format('woff2');
-        }
+        } */
 
         @font-face {
           font-family: 'Metropolis';
@@ -203,7 +203,7 @@ export default ({ children }) => (
             url('./fonts/metropolis/metropolis-400italic.woff2') format('woff2');
         }
 
-        @font-face {
+        /* @font-face {
           font-family: 'Metropolis';
           font-style: normal;
           font-display: swap;
@@ -219,7 +219,7 @@ export default ({ children }) => (
           font-weight: 500;
           src: local('Metropolis Medium italic'), local('Metropolis-Mediumitalic'),
             url('./fonts/metropolis/metropolis-500italic.woff2') format('woff2');
-        }
+        } */
 
         @font-face {
           font-family: 'Metropolis';
@@ -257,7 +257,7 @@ export default ({ children }) => (
             url('./fonts/metropolis/metropolis-700italic.woff2') format('woff2');
         }
 
-        @font-face {
+        /* @font-face {
           font-family: 'Metropolis';
           font-style: normal;
           font-display: swap;
@@ -291,7 +291,7 @@ export default ({ children }) => (
           font-weight: 900;
           src: local('Metropolis Black italic'), local('Metropolis-Blackitalic'),
             url('./fonts/metropolis/metropolis-900italic.woff2') format('woff2');
-        }
+        } */
       `}
     />
     <ThemeProvider theme={theme}>{children}</ThemeProvider>
