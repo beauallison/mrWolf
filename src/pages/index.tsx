@@ -22,6 +22,9 @@ const Index = () => {
   const [cities, setCities] = useState();
   const [display24HourTime, setDisplay24HourTime] = useState();
   const [displaySeconds, setDisplaySeconds] = useState();
+  const [displayFontSize, setDisplayFontSize] = useState();
+  const [colorPrimary, setColorPrimary] = useState();
+  const [colorSecondary, setColorSecondary] = useState();
 
   const toggleDisplay24HourTime = async () => {
     const value = !display24HourTime;
@@ -39,11 +42,22 @@ const Index = () => {
     async function load() {
       if (loaded) return;
       const result = await Storage.getAll();
-      const { KEY_HOME, KEY_CITIES, KEY_DISPLAY_24HR_TIME, KEY_DISPLAY_SECONDS } = result;
+      const {
+        KEY_HOME,
+        KEY_CITIES,
+        KEY_DISPLAY_24HR_TIME,
+        KEY_DISPLAY_SECONDS,
+        KEY_DISPLAY_FONT_SIZE,
+        KEY_COLOR_PRIMARY,
+        KEY_COLOR_SECONDARY,
+      } = result;
       KEY_HOME && (await setHome(KEY_HOME));
       KEY_CITIES && (await setCities(KEY_CITIES));
       KEY_DISPLAY_24HR_TIME && (await setDisplay24HourTime(KEY_DISPLAY_24HR_TIME));
       KEY_DISPLAY_SECONDS && (await setDisplaySeconds(KEY_DISPLAY_SECONDS));
+      KEY_DISPLAY_FONT_SIZE && (await setDisplayFontSize(KEY_DISPLAY_FONT_SIZE));
+      KEY_COLOR_PRIMARY && (await setColorPrimary(KEY_COLOR_PRIMARY));
+      KEY_COLOR_SECONDARY && (await setColorSecondary(KEY_COLOR_SECONDARY));
       await setLoaded(true);
     }
 
