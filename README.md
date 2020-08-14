@@ -15,6 +15,22 @@ https://mrwolf.app
 
 Available for [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/)
 
+## Features List
+
+| Feature                      | Status |
+| ---------------------------- | :----: |
+| >6000 Cities                 |   ✅   |
+| 24 Hour Time Toggle          |   ✅   |
+| Display Seconds Toggle       |   ✅   |
+| Browser Storage & Sync       |   ✅   |
+| Web Version                  |   ✅   |
+| Firefox Extension            |   ✅   |
+| Chrome Extension             |   🔜   |
+| Edge Extension               |   🔜   |
+| Theme Support                |   🔜   |
+| Custom Font Sizes            |   🔜   |
+| Plus / Minus Time Calculator |   🔜   |
+
 ## Running Locally
 
 This app requires Node and NPM to build and run.
