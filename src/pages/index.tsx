@@ -65,7 +65,7 @@ const Index = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout displayFontSize={displayFontSize} colorPrimary={colorPrimary} colorSecondary={colorSecondary}>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
       {loaded && (
         <>
