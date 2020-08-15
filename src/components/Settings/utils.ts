@@ -9,19 +9,20 @@ export interface IValue {
 }
 
 // City to Value
-export const cityToValue = (city: ICity) =>
-  ({
-    value: city.name,
-    label: `${city.name}, ${city.country}`,
-    city,
-  } as IValue);
+export const cityToValue = (city: ICity) => {
+  const nameAndCountry = `${city.name}, ${city.country}`;
 
-export const citiesToValues = (cities: ICity[]) =>
-  cities.map((city) => cityToValue(city));
+  return {
+    value: nameAndCountry,
+    label: nameAndCountry,
+    city,
+  } as IValue;
+};
+
+export const citiesToValues = (cities: ICity[]) => cities.map((city) => cityToValue(city));
 
 export const generateOptions = () => citiesToValues(utils.citiesList());
 
 // Value to City
 export const valueToCity = ({ city }: IValue) => city as ICity;
-export const valuesToCities = (values: IValue[]) =>
-  values.map((value) => valueToCity(value));
+export const valuesToCities = (values: IValue[]) => values.map((value) => valueToCity(value));
