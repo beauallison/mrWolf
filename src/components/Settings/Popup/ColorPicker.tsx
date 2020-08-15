@@ -11,14 +11,33 @@ const ColoredButton = styled.div`
   background-color: ${(props) => props.color};
 `;
 
+const Popover = styled.div`
+  position: absolute;
+  right: 60px;
+  z-index: 2;
+`;
+
+const Cover = styled.div`
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+`;
+
 export default ({ color, onChange }) => {
   const [pickerIsVisible, setPickerIsVisible] = useState(false);
 
   const togglePicker = () => setPickerIsVisible(!pickerIsVisible);
 
-  return pickerIsVisible ? (
-    <ChromePicker color={color} onChange={({ hex }) => onChange(hex)} disableAlpha />
-  ) : (
-    <ColoredButton color={color} onClick={togglePicker} />
+  return (
+    <ColoredButton color={color} onClick={() => !pickerIsVisible && togglePicker()}>
+      {pickerIsVisible && (
+        <Popover>
+          <Cover onClick={togglePicker} />
+          <ChromePicker color={color} onChange={({ hex }) => onChange(hex)} disableAlpha />
+        </Popover>
+      )}
+    </ColoredButton>
   );
 };
