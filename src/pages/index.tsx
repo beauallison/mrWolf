@@ -7,6 +7,7 @@ import Welcome from '../components/Welcome';
 import Responsive from '../components/Responsive';
 import Settings from '../components/Settings';
 import * as Storage from '../storage';
+import { colorSchemes } from '../components/theme';
 
 const schema = {
   '@context': 'http://schema.org',
@@ -44,19 +45,34 @@ const Index = () => {
     await Storage.saveDisplayFontSize(size);
   };
 
-  const updateColorPalette = async (palette: string) => {
+  const updateColorPalette = async (palette: {}) => {
+    const scheme = colorSchemes.find(({ name }) => name === palette.value);
+    if (!scheme) return;
     await setColorPalette(palette);
     await Storage.saveColorPalette(palette);
+
+    await setColorPrimary(scheme.primary);
+    await Storage.saveColorPrimary(scheme.primary);
+
+    await setColorSecondary(scheme.secondary);
+    await Storage.saveColorSecondary(scheme.secondary);
   };
 
   const updateColorPrimary = async (color: string) => {
     await setColorPrimary(color);
     await Storage.saveColorPrimary(color);
+
+    const customPalette = { value: 'Custom', label: 'Custom' };
+    await setColorPalette(customPalette);
+    await setColorPalette(customPalette);
   };
 
   const updateColorSecondary = async (color: string) => {
     await setColorSecondary(color);
     await Storage.saveColorSecondary(color);
+    const customPalette = { value: 'Custom', label: 'Custom' };
+    await setColorPalette(customPalette);
+    await setColorPalette(customPalette);
   };
 
   useEffect(() => {
