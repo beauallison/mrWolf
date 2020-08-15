@@ -2,6 +2,8 @@ import React from 'react';
 import CitySelector from './CitySelector';
 import Checkbox from './Checkbox';
 import ISettings from '../ISettings';
+import ColorPicker from './ColorPicker';
+import ThemeSelector from './ThemeSelector';
 import {
   Container,
   ExtensionLink,
@@ -11,7 +13,6 @@ import {
   CitySelectorContainer,
   SettingContainer,
 } from './components';
-import ColorPicker from './ColorPicker';
 
 export interface IPopup extends ISettings {
   isVisible: boolean;
@@ -52,6 +53,8 @@ export default ({
       <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
     </SettingContainer>
     <TitleBold>Theme</TitleBold>
+    <Title>Color Palette</Title>
+    <ThemeSelector />
     <SettingContainer>
       <Title>Primary Color</Title>
       <ColorPicker color={colorPrimary} onChange={updateColorPrimary} />
