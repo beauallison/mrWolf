@@ -28,9 +28,10 @@ export default ({
   displaySeconds,
   toggleDisplaySeconds,
   isVisible,
+  colorPalette,
   colorPrimary,
   colorSecondary,
-  updateDisplayFontSize,
+  updateColorPalette,
   updateColorPrimary,
   updateColorSecondary,
 }: IPopup) => (
@@ -54,7 +55,7 @@ export default ({
     </SettingContainer>
     <TitleBold>Theme</TitleBold>
     <Title>Color Palette</Title>
-    <ThemeSelector />
+    <ThemeSelector onChange={updateColorPalette} value={colorPalette} />
     <SettingContainer>
       <Title>Primary Color</Title>
       <ColorPicker color={colorPrimary} onChange={updateColorPrimary} />

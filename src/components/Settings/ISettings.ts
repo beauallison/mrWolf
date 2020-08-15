@@ -10,10 +10,11 @@ export default interface ISettings {
   displaySeconds: boolean;
   toggleDisplaySeconds: void;
   displayFontSize: boolean;
-  toggleDisplayFontSize: void;
-  colorPrimary: string;
-  colorSecondary: string;
   updateDisplayFontSize: void;
+  colorPalette: string;
+  updateColorPalette: void;
+  colorPrimary: string;
   updateColorPrimary: void;
+  colorSecondary: string;
   updateColorSecondary: void;
 }

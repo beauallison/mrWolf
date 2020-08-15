@@ -5,6 +5,4 @@ import { colorSchemes } from '../../theme';
 
 const options = colorSchemes.map(({ name }) => ({ value: name, label: name }));
 
-export default ({ value, onChange }) => (
-  <Select options={options} styles={Styles} value={value || 'Custom'} placeholder={'Select'} onChange={onChange} />
-);
+export default ({ value, onChange }) => <Select options={options} styles={Styles} value={value} onChange={onChange} />;

@@ -23,6 +23,7 @@ const Index = () => {
   const [display24HourTime, setDisplay24HourTime] = useState();
   const [displaySeconds, setDisplaySeconds] = useState();
   const [displayFontSize, setDisplayFontSize] = useState('medium');
+  const [colorPalette, setColorPalette] = useState({ value: 'Original', label: 'Original' });
   const [colorPrimary, setColorPrimary] = useState('#BB86FC');
   const [colorSecondary, setColorSecondary] = useState('#03DAC6');
 
@@ -41,6 +42,11 @@ const Index = () => {
   const updateDisplayFontSize = async (size: string) => {
     await setDisplayFontSize(size);
     await Storage.saveDisplayFontSize(size);
+  };
+
+  const updateColorPalette = async (palette: string) => {
+    await setColorPalette(palette);
+    await Storage.saveColorPalette(palette);
   };
 
   const updateColorPrimary = async (color: string) => {
@@ -63,6 +69,7 @@ const Index = () => {
         KEY_DISPLAY_24HR_TIME,
         KEY_DISPLAY_SECONDS,
         KEY_DISPLAY_FONT_SIZE,
+        KEY_COLOR_PALETTE,
         KEY_COLOR_PRIMARY,
         KEY_COLOR_SECONDARY,
       } = result;
@@ -72,6 +79,7 @@ const Index = () => {
       KEY_DISPLAY_24HR_TIME && (await setDisplay24HourTime(KEY_DISPLAY_24HR_TIME));
       KEY_DISPLAY_SECONDS && (await setDisplaySeconds(KEY_DISPLAY_SECONDS));
       KEY_DISPLAY_FONT_SIZE && (await setDisplayFontSize(KEY_DISPLAY_FONT_SIZE));
+      KEY_COLOR_PALETTE && (await setColorPalette(KEY_COLOR_PALETTE));
       KEY_COLOR_PRIMARY && (await setColorPrimary(KEY_COLOR_PRIMARY));
       KEY_COLOR_SECONDARY && (await setColorSecondary(KEY_COLOR_SECONDARY));
       await setLoaded(true);
@@ -106,10 +114,12 @@ const Index = () => {
               toggleDisplay24HourTime={toggleDisplay24HourTime}
               displaySeconds={displaySeconds}
               toggleDisplaySeconds={toggleDisplaySeconds}
-              colorPrimary={colorPrimary}
-              colorSecondary={colorSecondary}
               updateDisplayFontSize={updateDisplayFontSize}
+              colorPalette={colorPalette}
+              updateColorPalette={updateColorPalette}
+              colorPrimary={colorPrimary}
               updateColorPrimary={updateColorPrimary}
+              colorSecondary={colorSecondary}
               updateColorSecondary={updateColorSecondary}
             />
           </Responsive.Desktop>
