@@ -67,7 +67,11 @@ describe('storage', () => {
             "timezone": "Asia/Dubai",
           },
         ],
+        "KEY_COLOR_PALETTE": null,
+        "KEY_COLOR_PRIMARY": null,
+        "KEY_COLOR_SECONDARY": null,
         "KEY_DISPLAY_24HR_TIME": true,
+        "KEY_DISPLAY_FONT_SIZE": null,
         "KEY_DISPLAY_SECONDS": false,
         "KEY_HOME": Object {
           "country": "United Arab Emirates",
