@@ -17,19 +17,19 @@ Available for [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-a
 
 ## Features List
 
-| Feature                      | Status |
-| ---------------------------- | :----: |
-| >6000 Cities                 |   ✅   |
-| 24 Hour Time Toggle          |   ✅   |
-| Display Seconds Toggle       |   ✅   |
-| Browser Storage & Sync       |   ✅   |
-| Web Version                  |   ✅   |
-| Firefox Extension            |   ✅   |
-| Chrome Extension             |   🔜   |
-| Edge Extension               |   🔜   |
-| Theme Support                |   🔜   |
-| Custom Font Sizes            |   🔜   |
-| Plus / Minus Time Calculator |   🔜   |
+| Feature                      |   Status    |
+| ---------------------------- | :---------: |
+| >6000 Cities                 |     ✅      |
+| 24 Hour Time Toggle          |     ✅      |
+| Display Seconds Toggle       |     ✅      |
+| Browser Storage & Sync       |     ✅      |
+| Web Version                  |     ✅      |
+| Firefox Extension            |     ✅      |
+| Chrome Extension             |  In Review  |
+| Edge Extension               |  In Review  |
+| Theme Support                | In Progress |
+| Custom Font Sizes            |     🔜      |
+| Plus / Minus Time Calculator |     🔜      |
 
 ## Running Locally
 
