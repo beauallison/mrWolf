@@ -22,9 +22,9 @@ const Index = () => {
   const [cities, setCities] = useState();
   const [display24HourTime, setDisplay24HourTime] = useState();
   const [displaySeconds, setDisplaySeconds] = useState();
-  const [displayFontSize, setDisplayFontSize] = useState();
-  const [colorPrimary, setColorPrimary] = useState();
-  const [colorSecondary, setColorSecondary] = useState();
+  const [displayFontSize, setDisplayFontSize] = useState('medium');
+  const [colorPrimary, setColorPrimary] = useState('#BB86FC');
+  const [colorSecondary, setColorSecondary] = useState('#03DAC6');
 
   const toggleDisplay24HourTime = async () => {
     const value = !display24HourTime;
@@ -36,6 +36,21 @@ const Index = () => {
     const value = !displaySeconds;
     await setDisplaySeconds(value);
     await Storage.saveDisplaySeconds(value);
+  };
+
+  const updateDisplayFontSize = async (size: string) => {
+    await setDisplayFontSize(size);
+    await Storage.saveDisplayFontSize(size);
+  };
+
+  const updateColorPrimary = async (color: string) => {
+    await setColorPrimary(color);
+    await Storage.saveColorPrimary(color);
+  };
+
+  const updateColorSecondary = async (color: string) => {
+    await setColorSecondary(color);
+    await Storage.saveColorSecondary(color);
   };
 
   useEffect(() => {
@@ -51,6 +66,7 @@ const Index = () => {
         KEY_COLOR_PRIMARY,
         KEY_COLOR_SECONDARY,
       } = result;
+
       KEY_HOME && (await setHome(KEY_HOME));
       KEY_CITIES && (await setCities(KEY_CITIES));
       KEY_DISPLAY_24HR_TIME && (await setDisplay24HourTime(KEY_DISPLAY_24HR_TIME));
@@ -90,6 +106,11 @@ const Index = () => {
               toggleDisplay24HourTime={toggleDisplay24HourTime}
               displaySeconds={displaySeconds}
               toggleDisplaySeconds={toggleDisplaySeconds}
+              colorPrimary={colorPrimary}
+              colorSecondary={colorSecondary}
+              updateDisplayFontSize={updateDisplayFontSize}
+              updateColorPrimary={updateColorPrimary}
+              updateColorSecondary={updateColorSecondary}
             />
           </Responsive.Desktop>
         </>

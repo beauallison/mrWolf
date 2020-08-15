@@ -11,13 +11,12 @@ export interface ILayout {
 
 export default ({ displayFontSize, colorPrimary, colorSecondary, children }) => {
   const customTheme = {
-    colors: {
-      ...theme.colors,
-      primary: colorPrimary,
-      secondary: colorSecondary,
-    },
+    ...theme,
     fontSize: displayFontSize,
   };
+
+  if (colorPrimary) customTheme.colors.primary = colorPrimary;
+  if (colorSecondary) customTheme.colors.secondary = colorSecondary;
 
   return (
     <>

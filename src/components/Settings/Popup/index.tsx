@@ -9,8 +9,9 @@ import {
   Title,
   TitleBold,
   CitySelectorContainer,
-  CheckboxContainer,
+  SettingContainer,
 } from './components';
+import ColorPicker from './ColorPicker';
 
 export interface IPopup extends ISettings {
   isVisible: boolean;
@@ -26,6 +27,11 @@ export default ({
   displaySeconds,
   toggleDisplaySeconds,
   isVisible,
+  colorPrimary,
+  colorSecondary,
+  updateDisplayFontSize,
+  updateColorPrimary,
+  updateColorSecondary,
 }: IPopup) => (
   <Container isVisible={isVisible}>
     <TitleBold>Settings</TitleBold>
@@ -37,14 +43,23 @@ export default ({
       <Title>Other Cities</Title>
       <CitySelector value={cities} isMulti={true} onChange={setCities} />
     </CitySelectorContainer>
-    <CheckboxContainer>
+    <SettingContainer>
       <Title>Display 24 Hour Time</Title>
       <Checkbox checked={display24HourTime} onChange={toggleDisplay24HourTime} />
-    </CheckboxContainer>
-    <CheckboxContainer>
+    </SettingContainer>
+    <SettingContainer>
       <Title>Display Seconds</Title>
       <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
-    </CheckboxContainer>
+    </SettingContainer>
+    <TitleBold>Theme</TitleBold>
+    <SettingContainer>
+      <Title>Primary Color</Title>
+      <ColorPicker color={colorPrimary} onChange={updateColorPrimary} />
+    </SettingContainer>
+    <SettingContainer>
+      <Title>Secondary Color</Title>
+      <ColorPicker color={colorSecondary} onChange={updateColorSecondary} />
+    </SettingContainer>
     <TitleBold>Download the Extension</TitleBold>
     <Title>
       <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">

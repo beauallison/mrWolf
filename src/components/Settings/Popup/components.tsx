@@ -35,7 +35,7 @@ export const CitySelectorContainer = styled.div`
   flex-direction: column;
 `;
 
-export const CheckboxContainer = styled.div`
+export const SettingContainer = styled.div`
   margin-top: 5px;
 
   display: flex;

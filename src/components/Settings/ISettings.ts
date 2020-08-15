@@ -9,4 +9,11 @@ export default interface ISettings {
   toggleDisplay24HourTime: void;
   displaySeconds: boolean;
   toggleDisplaySeconds: void;
+  displayFontSize: boolean;
+  toggleDisplayFontSize: void;
+  colorPrimary: string;
+  colorSecondary: string;
+  updateDisplayFontSize: void;
+  updateColorPrimary: void;
+  updateColorSecondary: void;
 }
