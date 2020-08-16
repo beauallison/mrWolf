@@ -49,15 +49,16 @@ export default () => {
 
     const customPalette = { value: 'Custom', label: 'Custom' };
     await setColorPalette(customPalette);
-    await setColorPalette(customPalette);
+    await Storage.saveColorPalette(customPalette);
   };
 
   const updateColorSecondary = async (color: string) => {
     await setColorSecondary(color);
     await Storage.saveColorSecondary(color);
+
     const customPalette = { value: 'Custom', label: 'Custom' };
     await setColorPalette(customPalette);
-    await setColorPalette(customPalette);
+    await Storage.saveColorPalette(customPalette);
   };
 
   async function load() {
