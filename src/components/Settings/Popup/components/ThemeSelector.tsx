@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import { Styles } from './SelectStyles';
-import { colorSchemes } from '../../theme';
+import { colorSchemes } from '../../../theme';
 
 const options = colorSchemes.map(({ name }) => ({ value: name, label: name }));
 

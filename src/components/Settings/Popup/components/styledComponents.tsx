@@ -1,28 +1,5 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-  position: absolute;
-  display: ${(props) => (props.isVisible ? 'grid' : 'none')};
-  grid-template-columns: 50% 50%;
-  grid-gap: 30px;
-
-  width: 600px;
-  min-height: 330px;
-
-  right: 5%;
-
-  background-color: ${(props) => props.theme.colors.surface};
-  border-radius: 3%;
-
-  padding: 30px;
-`;
-
-export const SettingsLeft = styled.div``;
-
-export const SettingsRight = styled.div`
-  margin-right: 20px;
-`;
-
 export const Text = styled.p`
   color: ${(props) => props.theme.colors.onSurface};
 `;

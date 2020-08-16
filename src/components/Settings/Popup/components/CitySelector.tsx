@@ -2,9 +2,9 @@ import React from 'react';
 import Select from 'react-select';
 import { FixedSizeList as List } from 'react-window';
 import { Styles } from './SelectStyles';
-import { IValue, cityToValue, citiesToValues, generateOptions, valueToCity, valuesToCities } from '../utils';
-import ICity from '../../../ICity';
-import * as Storage from '../../../storage';
+import { IValue, cityToValue, citiesToValues, generateOptions, valueToCity, valuesToCities } from '../../utils';
+import ICity from '../../../../ICity';
+import * as Storage from '../../../../storage';
 
 const HEIGHT = 35;
 
