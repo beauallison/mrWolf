@@ -35,7 +35,7 @@ export default () => (
     <Description>
       To get started select a <DescriptionBold>Home</DescriptionBold> from the Settings.
     </Description>
-    <Description>No Tracking. 100% Free.</Description>
+    <Description>No Tracking. 100% Free and Open Source.</Description>
     <Description>
       Available for{' '}
       <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">

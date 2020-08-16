@@ -2,9 +2,11 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   position: absolute;
-  display: ${(props) => (props.isVisible ? 'block' : 'none')};
+  display: ${(props) => (props.isVisible ? 'grid' : 'none')};
+  grid-template-columns: 50% 50%;
+  grid-gap: 30px;
 
-  width: 330px;
+  width: 600px;
   min-height: 330px;
 
   right: 5%;
@@ -13,6 +15,12 @@ export const Container = styled.div`
   border-radius: 3%;
 
   padding: 30px;
+`;
+
+export const SettingsLeft = styled.div``;
+
+export const SettingsRight = styled.div`
+  margin-right: 20px;
 `;
 
 export const Text = styled.p`
@@ -30,7 +38,7 @@ export const TitleBold = styled(Title)`
   font-weight: 600;
 `;
 
-export const CitySelectorContainer = styled.div`
+export const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;

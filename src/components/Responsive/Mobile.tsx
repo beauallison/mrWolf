@@ -47,7 +47,7 @@ export default () => (
     <Description>
       To get started open it on your <DescriptionBold>Desktop</DescriptionBold>.
     </Description>
-    <Description>No Tracking. 100% Free.</Description>
+    <Description>No Tracking. 100% Free and Open Source.</Description>
     <Description>
       With ❤️ by{' '}
       <GithubLink href="https://github.com/beauallison/" target="_blank">
