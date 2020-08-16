@@ -40,13 +40,7 @@ export default ({
         <Title>Secondary Color</Title>
         <ColorPicker color={colorSecondary} onChange={updateColorSecondary} />
       </SettingContainer>
-      <Title>
-        {'Version 0.0.4 - '}
-        <GithubLink href="https://github.com/beauallison/mrWolf" target="_blank">
-          Source Code
-        </GithubLink>
-      </Title>
-      {!isExtension && (
+      {!isExtension() && (
         <>
           <TitleBold>Download the Extension</TitleBold>
           <Title>
@@ -60,6 +54,12 @@ export default ({
           </Title>
         </>
       )}
+      <Title>
+        {'Version 0.0.4. '}
+        <GithubLink href="https://github.com/beauallison/mrWolf" target="_blank">
+          Source Code
+        </GithubLink>
+      </Title>
       <Title>
         With ❤️ by{' '}
         <GithubLink href="https://github.com/beauallison/" target="_blank">
