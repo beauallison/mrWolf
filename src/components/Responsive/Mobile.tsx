@@ -59,10 +59,13 @@ export default () => (
       <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">
         Firefox
       </ExtensionLink>
-      {/* {' and  '}
-      <ExtensionLink href="chrome-extension" target="_blank">
+      {' and  '}
+      <ExtensionLink
+        href="https://chrome.google.com/webstore/detail/mr-wolf/jkelocfjplnpcpjnmbamgfohobillnhf/"
+        target="_blank"
+      >
         Chrome
-      </ExtensionLink> */}
+      </ExtensionLink>
     </Description>
   </Container>
 );
