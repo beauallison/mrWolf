@@ -28,6 +28,10 @@ const ExtensionLink = styled.a`
   color: ${(props) => props.theme.colors.secondary};
 `;
 
+const GithubLink = styled.a`
+  color: ${(props) => props.theme.colors.onBackground};
+`;
+
 export default () => (
   <Container>
     <H1>Mr Wolf</H1>
@@ -35,7 +39,13 @@ export default () => (
     <Description>
       To get started select a <DescriptionBold>Home</DescriptionBold> from the Settings.
     </Description>
-    <Description>No Tracking. 100% Free and Open Source.</Description>
+    <Description>
+      No Tracking. 100% Free and{' '}
+      <GithubLink href="https://github.com/beauallison/mrWolf" target="_blank">
+        Open Source
+      </GithubLink>
+      .
+    </Description>
     <Description>
       Available for{' '}
       <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">
