@@ -11,9 +11,13 @@ Browser Extension and Web App made with React & Emotion for helping you sync tim
 
 https://mrwolf.app
 
-## Desktop Browser Extension
+## Desktop Browser Extensions
 
-Available for [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/)
+Available on the Extension Stores for
+
+- [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/)
+
+- [Chrome](https://chrome.google.com/webstore/detail/mr-wolf/jkelocfjplnpcpjnmbamgfohobillnhf/)
 
 ## Features List
 
