@@ -1,12 +1,12 @@
 import ReactDOM from 'react-dom';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import TimeViewer from '../components/TimeViewer';
 import Welcome from '../components/Welcome';
 import Responsive from '../components/Responsive';
 import Settings from '../components/Settings';
-import * as Storage from '../storage';
+import Props from './props';
 
 const schema = {
   '@context': 'http://schema.org',
@@ -17,41 +17,36 @@ const schema = {
 };
 
 const Index = () => {
-  const [loaded, setLoaded] = useState(false);
-  const [home, setHome] = useState();
-  const [cities, setCities] = useState();
-  const [display24HourTime, setDisplay24HourTime] = useState();
-  const [displaySeconds, setDisplaySeconds] = useState();
-
-  const toggleDisplay24HourTime = async () => {
-    const value = !display24HourTime;
-    await setDisplay24HourTime(value);
-    await Storage.saveDisplay24HrTime(value);
-  };
-
-  const toggleDisplaySeconds = async () => {
-    const value = !displaySeconds;
-    await setDisplaySeconds(value);
-    await Storage.saveDisplaySeconds(value);
-  };
+  const { state, functions } = Props();
+  const {
+    loaded,
+    home,
+    setHome,
+    cities,
+    setCities,
+    display24HourTime,
+    displaySeconds,
+    displayFontSize,
+    colorPalette,
+    colorPrimary,
+    colorSecondary,
+  } = state;
+  const {
+    load,
+    toggleDisplay24HourTime,
+    toggleDisplaySeconds,
+    updateDisplayFontSize,
+    updateColorPalette,
+    updateColorPrimary,
+    updateColorSecondary,
+  } = functions;
 
   useEffect(() => {
-    async function load() {
-      if (loaded) return;
-      const result = await Storage.getAll();
-      const { KEY_HOME, KEY_CITIES, KEY_DISPLAY_24HR_TIME, KEY_DISPLAY_SECONDS } = result;
-      KEY_HOME && (await setHome(KEY_HOME));
-      KEY_CITIES && (await setCities(KEY_CITIES));
-      KEY_DISPLAY_24HR_TIME && (await setDisplay24HourTime(KEY_DISPLAY_24HR_TIME));
-      KEY_DISPLAY_SECONDS && (await setDisplaySeconds(KEY_DISPLAY_SECONDS));
-      await setLoaded(true);
-    }
-
     load();
   }, []);
 
   return (
-    <Layout>
+    <Layout displayFontSize={displayFontSize} colorPrimary={colorPrimary} colorSecondary={colorSecondary}>
       <Head title={'Mr Wolf'} schema={schema} description={schema.description} />
       {loaded && (
         <>
@@ -76,6 +71,13 @@ const Index = () => {
               toggleDisplay24HourTime={toggleDisplay24HourTime}
               displaySeconds={displaySeconds}
               toggleDisplaySeconds={toggleDisplaySeconds}
+              updateDisplayFontSize={updateDisplayFontSize}
+              colorPalette={colorPalette}
+              updateColorPalette={updateColorPalette}
+              colorPrimary={colorPrimary}
+              updateColorPrimary={updateColorPrimary}
+              colorSecondary={colorSecondary}
+              updateColorSecondary={updateColorSecondary}
             />
           </Responsive.Desktop>
         </>

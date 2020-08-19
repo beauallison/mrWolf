@@ -11,25 +11,29 @@ Browser Extension and Web App made with React & Emotion for helping you sync tim
 
 https://mrwolf.app
 
-## Desktop Browser Extension
+## Desktop Browser Extensions
 
-Available for [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/)
+Available on the Extension Stores for
+
+- [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/)
+
+- [Chrome](https://chrome.google.com/webstore/detail/mr-wolf/jkelocfjplnpcpjnmbamgfohobillnhf/)
 
 ## Features List
 
-| Feature                      | Status |
-| ---------------------------- | :----: |
-| >6000 Cities                 |   ✅   |
-| 24 Hour Time Toggle          |   ✅   |
-| Display Seconds Toggle       |   ✅   |
-| Browser Storage & Sync       |   ✅   |
-| Web Version                  |   ✅   |
-| Firefox Extension            |   ✅   |
-| Chrome Extension             |   🔜   |
-| Edge Extension               |   🔜   |
-| Theme Support                |   🔜   |
-| Custom Font Sizes            |   🔜   |
-| Plus / Minus Time Calculator |   🔜   |
+| Feature                      |  Status   |
+| ---------------------------- | :-------: |
+| >6000 Cities                 |    ✅     |
+| 24 Hour Time Toggle          |    ✅     |
+| Display Seconds Toggle       |    ✅     |
+| Browser Storage & Sync       |    ✅     |
+| Web Version                  |    ✅     |
+| Firefox Extension            |    ✅     |
+| Chrome Extension             |    ✅     |
+| Edge Extension               | In Review |
+| Theme Support                |    ✅     |
+| Custom Font Sizes            |    🔜     |
+| Plus / Minus Time Calculator |    🔜     |
 
 ## Running Locally
 

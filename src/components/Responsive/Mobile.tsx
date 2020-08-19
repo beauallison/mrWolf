@@ -47,7 +47,7 @@ export default () => (
     <Description>
       To get started open it on your <DescriptionBold>Desktop</DescriptionBold>.
     </Description>
-    <Description>No Tracking. 100% Free.</Description>
+    <Description>No Tracking. 100% Free and Open Source.</Description>
     <Description>
       With ❤️ by{' '}
       <GithubLink href="https://github.com/beauallison/" target="_blank">
@@ -59,10 +59,13 @@ export default () => (
       <ExtensionLink href="https://addons.mozilla.org/en-GB/firefox/addon/mr-wolf-app/" target="_blank">
         Firefox
       </ExtensionLink>
-      {/* {' and  '}
-      <ExtensionLink href="chrome-extension" target="_blank">
+      {' and  '}
+      <ExtensionLink
+        href="https://chrome.google.com/webstore/detail/mr-wolf/jkelocfjplnpcpjnmbamgfohobillnhf/"
+        target="_blank"
+      >
         Chrome
-      </ExtensionLink> */}
+      </ExtensionLink>
     </Description>
   </Container>
 );
