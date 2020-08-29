@@ -17,4 +17,6 @@ export default interface ISettings {
   updateColorPrimary: void;
   colorSecondary: string;
   updateColorSecondary: void;
+  displayChecklist: boolean;
+  toggleDisplayChecklist: void;
 }

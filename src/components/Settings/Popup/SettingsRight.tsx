@@ -3,6 +3,7 @@ import ISettings from '../ISettings';
 import ColorPicker from './components/ColorPicker';
 import ThemeSelector from './components/ThemeSelector';
 import styled from '@emotion/styled';
+import Checkbox from './components/Checkbox';
 import {
   ExtensionLink,
   GithubLink,
@@ -24,6 +25,8 @@ export default ({
   updateColorPalette,
   updateColorPrimary,
   updateColorSecondary,
+  displayChecklist,
+  toggleDisplayChecklist,
 }: ISettings) => {
   return (
     <SettingsRight>
@@ -39,6 +42,11 @@ export default ({
       <SettingContainer>
         <Title>Secondary Color</Title>
         <ColorPicker color={colorSecondary} onChange={updateColorSecondary} />
+      </SettingContainer>
+      <TitleBold>Checklist</TitleBold>
+      <SettingContainer>
+        <Title>Display Checklist</Title>
+        <Checkbox checked={displayChecklist} onChange={toggleDisplayChecklist} />
       </SettingContainer>
       {!isExtension() && (
         <>
