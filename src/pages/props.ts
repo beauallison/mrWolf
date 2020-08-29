@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import * as Storage from '../storage';
 import { colorSchemes } from '../components/theme';
+import IChecklist from '../IChecklist';
+import { check } from 'prettier';
 
 export default () => {
   const [loaded, setLoaded] = useState(false);
@@ -12,6 +14,8 @@ export default () => {
   const [colorPalette, setColorPalette] = useState({ value: 'Original', label: 'Original' });
   const [colorPrimary, setColorPrimary] = useState('#BB86FC');
   const [colorSecondary, setColorSecondary] = useState('#03DAC6');
+  const [displayChecklist, setDisplayChecklist] = useState(false);
+  const [checklist, setChecklist] = useState([]);
 
   const toggleDisplay24HourTime = async () => {
     const value = !display24HourTime;
@@ -61,6 +65,17 @@ export default () => {
     await Storage.saveColorPalette(customPalette);
   };
 
+  const toggleDisplayChecklist = async () => {
+    const value = !displayChecklist;
+    await setDisplayChecklist(value);
+    await Storage.saveDisplayChecklist(value);
+  };
+
+  const updateChecklist = async (checklist: IChecklist[]) => {
+    await setChecklist(checklist);
+    await Storage.saveChecklist(checklist);
+  };
+
   async function load() {
     if (loaded) return;
     const result = await Storage.getAll();
@@ -73,6 +88,8 @@ export default () => {
       KEY_COLOR_PALETTE,
       KEY_COLOR_PRIMARY,
       KEY_COLOR_SECONDARY,
+      KEY_DISPLAY_CHECKLIST,
+      KEY_CHECKLIST,
     } = result;
 
     KEY_HOME && (await setHome(KEY_HOME));
@@ -83,29 +100,25 @@ export default () => {
     KEY_COLOR_PALETTE && (await setColorPalette(KEY_COLOR_PALETTE));
     KEY_COLOR_PRIMARY && (await setColorPrimary(KEY_COLOR_PRIMARY));
     KEY_COLOR_SECONDARY && (await setColorSecondary(KEY_COLOR_SECONDARY));
+    KEY_DISPLAY_CHECKLIST && (await setDisplayChecklist(KEY_DISPLAY_CHECKLIST));
+    KEY_CHECKLIST && (await setChecklist(KEY_CHECKLIST));
     await setLoaded(true);
   }
 
   return {
     state: {
       loaded,
-      setLoaded,
       home,
       setHome,
       cities,
       setCities,
       display24HourTime,
-      setDisplay24HourTime,
       displaySeconds,
-      setDisplaySeconds,
       displayFontSize,
-      setDisplayFontSize,
       colorPalette,
       setColorPalette,
       colorPrimary,
-      setColorPrimary,
       colorSecondary,
-      setColorSecondary,
     },
     functions: {
       load,
@@ -115,6 +128,8 @@ export default () => {
       updateColorPalette,
       updateColorPrimary,
       updateColorSecondary,
+      toggleDisplayChecklist,
+      updateChecklist,
     },
   };
 };
