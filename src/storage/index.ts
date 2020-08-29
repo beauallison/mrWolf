@@ -1,4 +1,5 @@
 import ICity from '../ICity';
+import IChecklist from '../IChecklist';
 import * as BrowserStorage from './browserStorage';
 import * as LocalStorage from './localStorage';
 import { isExtension } from './isExtension';
@@ -13,6 +14,8 @@ const KEY_DISPLAY_FONT_SIZE = 'KEY_DISPLAY_FONT_SIZE';
 const KEY_COLOR_PALETTE = 'KEY_COLOR_PALETTE';
 const KEY_COLOR_PRIMARY = 'KEY_COLOR_PRIMARY';
 const KEY_COLOR_SECONDARY = 'KEY_COLOR_SECONDARY';
+const KEY_DISPLAY_CHECKLIST = 'KEY_DISPLAY_CHECKLIST';
+const KEY_CHECKLIST = 'KEY_CHECKLIST';
 
 export const saveHome = (home: ICity) => Storage.saveItem(KEY_HOME, home);
 export const getHome = () => Storage.getItem(KEY_HOME) as ICity;
@@ -38,6 +41,12 @@ export const getColorPrimary = () => Storage.getItem(KEY_COLOR_PRIMARY);
 export const saveColorSecondary = (color: string) => Storage.saveItem(KEY_COLOR_SECONDARY, color);
 export const getColorSecondary = () => Storage.getItem(KEY_COLOR_SECONDARY);
 
+export const saveDisplayChecklist = (display: boolean) => Storage.saveItem(KEY_DISPLAY_CHECKLIST, display);
+export const getDisplayChecklist = () => Storage.getItem(KEY_DISPLAY_CHECKLIST) as boolean;
+
+export const saveChecklist = (checklist: IChecklist[]) => Storage.saveItem(KEY_COLOR_SECONDARY, checklist);
+export const getChecklist = () => Storage.getItem(KEY_COLOR_SECONDARY);
+
 interface IGetAll {
   KEY_HOME: ICity;
   KEY_CITIES: ICity[];
@@ -47,6 +56,8 @@ interface IGetAll {
   KEY_COLOR_PALETTE: string;
   KEY_COLOR_PRIMARY: string;
   KEY_COLOR_SECONDARY: string;
+  KEY_DISPLAY_CHECKLIST: boolean;
+  KEY_CHECKLIST: IChecklist[];
 }
 
 export const getAll = () =>
@@ -59,4 +70,6 @@ export const getAll = () =>
     KEY_COLOR_PALETTE,
     KEY_COLOR_PRIMARY,
     KEY_COLOR_SECONDARY,
+    KEY_DISPLAY_CHECKLIST,
+    KEY_CHECKLIST,
   ]) as IGetAll;
