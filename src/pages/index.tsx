@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
-import TimeViewer from '../components/TimeViewer';
+import Main from '../components/Main';
 import Welcome from '../components/Welcome';
 import Responsive from '../components/Responsive';
 import Settings from '../components/Settings';
@@ -53,12 +53,7 @@ const Index = () => {
           <Responsive.Mobile />
           <Responsive.Desktop>
             {home ? (
-              <TimeViewer
-                home={home}
-                cities={cities}
-                display24HourTime={display24HourTime}
-                displaySeconds={displaySeconds}
-              />
+              <Main home={home} cities={cities} display24HourTime={display24HourTime} displaySeconds={displaySeconds} />
             ) : (
               <Welcome />
             )}
