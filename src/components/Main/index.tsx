@@ -8,7 +8,7 @@ import IChecklist from '../../IChecklist';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: ${(props) => (props.checklist ? '70% 30%' : '100%')};
+  grid-template-columns: ${(props) => (props.displayChecklist ? '70% 30%' : '100%')};
 
   height: 100vh;
   width: 100vw;
@@ -33,7 +33,7 @@ export interface IProps {
 const sortChecklist = (checklist: IChecklist[]) => checklist.sort((a, b) => Number(a.complete) - Number(b.complete));
 
 export default (props: IProps) => (
-  <Container checklist={props.checklist}>
+  <Container displayChecklist={props.displayChecklist}>
     <TimeViewer>
       <Home {...props.home} {...props} />
       {props.cities && <Cities cities={props.cities} {...props} />}
