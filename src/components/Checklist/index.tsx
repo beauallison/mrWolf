@@ -31,7 +31,20 @@ export default (props: IProps) => (
       }}
     />
     {props.checklist.map((item) => (
-      <Item {...item} />
+      <Item
+        {...item}
+        toggleComplete={() => {
+          const value = !item.complete;
+          const index = props.checklist.findIndex(({ name }) => name === item.name);
+          const newItem = {
+            name: item.name,
+            complete: value,
+          } as IChecklist;
+          const newChecklist = [...props.checklist];
+          newChecklist[index] = newItem;
+          return props.updateChecklist(newChecklist);
+        }}
+      />
     ))}
   </Container>
 );
