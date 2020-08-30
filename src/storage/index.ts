@@ -44,8 +44,8 @@ export const getColorSecondary = () => Storage.getItem(KEY_COLOR_SECONDARY);
 export const saveDisplayChecklist = (display: boolean) => Storage.saveItem(KEY_DISPLAY_CHECKLIST, display);
 export const getDisplayChecklist = () => Storage.getItem(KEY_DISPLAY_CHECKLIST) as boolean;
 
-export const saveChecklist = (checklist: IChecklist[]) => Storage.saveItem(KEY_COLOR_SECONDARY, checklist);
-export const getChecklist = () => Storage.getItem(KEY_COLOR_SECONDARY);
+export const saveChecklist = (checklist: IChecklist[]) => Storage.saveItem(KEY_CHECKLIST, checklist);
+export const getChecklist = () => Storage.getItem(KEY_CHECKLIST);
 
 interface IGetAll {
   KEY_HOME: ICity;

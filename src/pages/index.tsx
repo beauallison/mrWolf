@@ -42,6 +42,7 @@ const Index = () => {
     updateColorPrimary,
     updateColorSecondary,
     toggleDisplayChecklist,
+    updateChecklist,
   } = functions;
 
   useEffect(() => {
@@ -63,6 +64,7 @@ const Index = () => {
                 displaySeconds={displaySeconds}
                 displayChecklist={displayChecklist}
                 checklist={checklist}
+                updateChecklist={updateChecklist}
               />
             ) : (
               <Welcome />
