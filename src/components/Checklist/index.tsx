@@ -6,13 +6,15 @@ import Item from './Item';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
-  height: 100vh;
-  width: 100vw;
+  margin-top: 70%;
+  margin-right: 20%;
 `;
 
-const CreateItem = styled.button``;
+const CreateItem = styled.button`
+  height: 30px;
+  max-width: 30px;
+`;
 
 export interface IProps {
   checklist?: IChecklist[];
@@ -22,6 +24,8 @@ export interface IProps {
 export default ({ checklist }: IProps) => (
   <Container>
     <CreateItem />
-    {checklist && <Item {...checklist} />}
+    {checklist.map((item) => (
+      <Item {...item} />
+    ))}
   </Container>
 );
