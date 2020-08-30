@@ -11,9 +11,24 @@ const Container = styled.div`
   margin-right: 20%;
 `;
 
-const CreateItem = styled.button`
-  height: 30px;
-  max-width: 30px;
+const EmptyItem = styled.input`
+  font-family: 'Inter';
+  font-size: 13px;
+
+  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.onBackground};
+
+  height: 20px;
+  max-width: 250px;
+
+  border: none;
+  border-bottom: 1px solid ${(props) => props.theme.colors.onBackground};
+
+  &:focus {
+    border: none;
+    border-bottom: 1px solid ${(props) => props.theme.colors.onBackground};
+    outline: none;
+  }
 `;
 
 export interface IProps {
@@ -23,7 +38,7 @@ export interface IProps {
 
 export default ({ checklist }: IProps) => (
   <Container>
-    <CreateItem />
+    <EmptyItem placeholder="new item" />
     {checklist.map((item) => (
       <Item {...item} />
     ))}
