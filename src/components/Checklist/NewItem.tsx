@@ -30,8 +30,9 @@ export default ({ createItem }: IProps) => (
   <NewItem
     placeholder="new item"
     onKeyDown={(event) => {
-      console.log(event.target.value);
-      return createItem(event.target.value);
+      if (event.key === 'Enter' || event.keyCode === 13) {
+        return createItem(event.target.value);
+      }
     }}
   />
 );
