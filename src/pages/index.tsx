@@ -30,6 +30,8 @@ const Index = () => {
     colorPalette,
     colorPrimary,
     colorSecondary,
+    displayChecklist,
+    checklist,
   } = state;
   const {
     load,
@@ -39,6 +41,7 @@ const Index = () => {
     updateColorPalette,
     updateColorPrimary,
     updateColorSecondary,
+    toggleDisplayChecklist,
   } = functions;
 
   useEffect(() => {
@@ -53,7 +56,14 @@ const Index = () => {
           <Responsive.Mobile />
           <Responsive.Desktop>
             {home ? (
-              <Main home={home} cities={cities} display24HourTime={display24HourTime} displaySeconds={displaySeconds} />
+              <Main
+                home={home}
+                cities={cities}
+                display24HourTime={display24HourTime}
+                displaySeconds={displaySeconds}
+                displayChecklist={displayChecklist}
+                checklist={checklist}
+              />
             ) : (
               <Welcome />
             )}
@@ -73,6 +83,8 @@ const Index = () => {
               updateColorPrimary={updateColorPrimary}
               colorSecondary={colorSecondary}
               updateColorSecondary={updateColorSecondary}
+              displayChecklist={displayChecklist}
+              toggleDisplayChecklist={toggleDisplayChecklist}
             />
           </Responsive.Desktop>
         </>

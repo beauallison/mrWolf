@@ -119,6 +119,8 @@ export default () => {
       setColorPalette,
       colorPrimary,
       colorSecondary,
+      displayChecklist,
+      checklist,
     },
     functions: {
       load,
