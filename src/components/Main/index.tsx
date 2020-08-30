@@ -4,6 +4,8 @@ import Home from './Home';
 import Cities from './Cities';
 import Checklist from '../Checklist';
 import ICity from '../../ICity';
+import IChecklist from '../../IChecklist';
+import { check } from 'prettier';
 
 const Container = styled.div`
   display: grid;
@@ -28,18 +30,20 @@ export interface IProps {
 
 const tempChecklist = [
   {
-    name: 'ABC',
+    name: 'Create temp checklist',
     complete: true,
   },
   {
-    name: 'XYZ',
+    name: 'Make a checklist list',
     complete: false,
   },
   {
-    name: '123',
+    name: 'Publish new version',
     complete: false,
   },
 ];
+
+const sortChecklist = (checklist: IChecklist[]) => checklist.sort((a, b) => Number(a.complete) - Number(b.complete));
 
 export default ({ home, cities, ...props }: IProps) => (
   <Container checklist={tempChecklist}>
@@ -47,6 +51,6 @@ export default ({ home, cities, ...props }: IProps) => (
       <Home {...home} {...props} />
       {cities && <Cities cities={cities} {...props} />}
     </TimeViewer>
-    {tempChecklist && <Checklist checklist={tempChecklist} />}
+    {tempChecklist && <Checklist checklist={sortChecklist(tempChecklist)} />}
   </Container>
 );

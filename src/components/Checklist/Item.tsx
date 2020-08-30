@@ -15,6 +15,8 @@ const Title = styled.p`
 
   color: white;
   margin-left: 10px;
+
+  text-decoration: ${(props) => (props.complete ? 'line-through' : '')};
 `;
 
 export interface IChecklistItem extends IChecklist {
@@ -24,6 +26,6 @@ export interface IChecklistItem extends IChecklist {
 export default (props: IChecklistItem) => (
   <ChecklistItem>
     <Checkbox checked={props.complete} onChange={props.toggleComplete} />
-    <Title>{props.name}</Title>
+    <Title complete={props.complete}>{props.name}</Title>
   </ChecklistItem>
 );
