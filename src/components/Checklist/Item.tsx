@@ -6,12 +6,13 @@ import Checkbox from './Checkbox';
 const DeleteButton = styled.button`
   display: none;
   background-color: ${(props) => props.theme.colors.background};
-  border: solid 1px ${(props) => props.theme.colors.onBackground};
+  border: solid 1px ${(props) => props.theme.colors.secondary};
   border-radius: 5px;
   width: 25px;
   height: 25px;
 
-  color: ${(props) => props.theme.colors.onBackground};
+  color: ${(props) => props.theme.colors.secondary};
+  text-align: center;
   font-size: 12px;
 `;
 
@@ -31,7 +32,7 @@ const ChecklistItem = styled.div`
 const Title = styled.p`
   font-family: 'Inter';
 
-  color: white;
+  color: ${(props) => props.theme.colors.onBackground};
   margin-left: 10px;
 
   text-decoration: ${(props) => (props.complete ? 'line-through' : '')};
