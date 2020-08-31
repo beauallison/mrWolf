@@ -3,7 +3,7 @@
 ![CI](https://github.com/beauallison/mrWolf/workflows/CI/badge.svg)
 [![Percy.io](https://percy.io/static/images/percy-badge.svg)](https://percy.io/beauallison/mrWolf)
 
-Browser Extension and Web App made with React & Emotion for helping you sync timezones across the globe.
+Browser Extension and Web App made with React, Emotion, & TypeScript for helping you sync timezones across the globe.
 
 ![](./preview.gif)
 

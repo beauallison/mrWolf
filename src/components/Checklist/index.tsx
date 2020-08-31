@@ -7,14 +7,15 @@ import NewItem from './NewItem';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 
-  margin-top: 70%;
-  margin-right: 20%;
+  max-height: 100vh;
 `;
 
 const ScrollBox = styled.div`
-  max-height: 300px;
+  height: 300px;
   overflow: scroll;
+  margin-bottom: 30px;
 `;
 
 export interface IProps {
