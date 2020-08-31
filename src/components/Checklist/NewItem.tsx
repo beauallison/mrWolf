@@ -12,11 +12,11 @@ const NewItem = styled.input`
   max-width: 250px;
 
   border: none;
-  border-bottom: 1px solid ${(props) => props.theme.colors.onBackground};
+  border-bottom: 1px solid ${(props) => props.theme.colors.secondary};
 
   &:focus {
     border: none;
-    border-bottom: 1px solid ${(props) => props.theme.colors.onBackground};
+    border-bottom: 1px solid ${(props) => props.theme.colors.secondary};
     outline: none;
   }
 `;
@@ -33,8 +33,9 @@ export default ({ createItem }: IProps) => {
       placeholder="new item"
       onChange={(event) => setValue(event.target.value)}
       onKeyDown={async (event) => {
+        const newValue = event.target.value;
+        if (newValue.length === 0) return;
         if (event.key === 'Enter' || event.keyCode === 13) {
-          const newValue = event.target.value;
           await setValue('');
           return createItem(newValue);
         }
