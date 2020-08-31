@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import IChecklist from '../../IChecklist';
 
 const NewItem = styled.input`
   font-family: 'Inter';
@@ -26,13 +25,20 @@ export interface IProps {
   createItem: void;
 }
 
-export default ({ createItem }: IProps) => (
-  <NewItem
-    placeholder="new item"
-    onKeyDown={(event) => {
-      if (event.key === 'Enter' || event.keyCode === 13) {
-        return createItem(event.target.value);
-      }
-    }}
-  />
-);
+export default ({ createItem }: IProps) => {
+  const [value, setValue] = useState('');
+  return (
+    <NewItem
+      value={value}
+      placeholder="new item"
+      onChange={(event) => setValue(event.target.value)}
+      onKeyDown={async (event) => {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+          const newValue = event.target.value;
+          await setValue('');
+          return createItem(newValue);
+        }
+      }}
+    />
+  );
+};
