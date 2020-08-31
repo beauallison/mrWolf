@@ -66,7 +66,7 @@ export default ({
         </>
       )}
       <Title>
-        {'Version 0.0.4. '}
+        {'Version 0.1.0. '}
         <GithubLink href="https://github.com/beauallison/mrWolf" target="_blank">
           Source Code
         </GithubLink>
