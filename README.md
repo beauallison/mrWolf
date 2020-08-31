@@ -19,21 +19,24 @@ Available on the Extension Stores for
 
 - [Chrome](https://chrome.google.com/webstore/detail/mr-wolf/jkelocfjplnpcpjnmbamgfohobillnhf/)
 
+- [Edge](https://microsoftedge.microsoft.com/addons/detail/mr-wolf/ihalkbldgbodccfefbohcfeckdgdodgo)
+
 ## Features List
 
-| Feature                      |  Status   |
-| ---------------------------- | :-------: |
-| >6000 Cities                 |    ✅     |
-| 24 Hour Time Toggle          |    ✅     |
-| Display Seconds Toggle       |    ✅     |
-| Browser Storage & Sync       |    ✅     |
-| Web Version                  |    ✅     |
-| Firefox Extension            |    ✅     |
-| Chrome Extension             |    ✅     |
-| Edge Extension               | In Review |
-| Theme Support                |    ✅     |
-| Custom Font Sizes            |    🔜     |
-| Plus / Minus Time Calculator |    🔜     |
+| Feature                      |   Status    |
+| ---------------------------- | :---------: |
+| >6000 Cities                 |     ✅      |
+| 24 Hour Time Toggle          |     ✅      |
+| Display Seconds Toggle       |     ✅      |
+| Browser Storage & Sync       |     ✅      |
+| Web Version                  |     ✅      |
+| Firefox Extension            |     ✅      |
+| Chrome Extension             |     ✅      |
+| Edge Extension               |     ✅      |
+| Theme Support                |     ✅      |
+| Custom Font Sizes            |     🔜      |
+| Plus / Minus Time Calculator |     🔜      |
+| Checklist                    | Coming Soon |
 
 ## Running Locally
 
