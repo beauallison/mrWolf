@@ -30,18 +30,22 @@ export default (props: IProps) => (
         return props.updateChecklist(newChecklist);
       }}
     />
-    {props.checklist.map((item) => (
+    {props.checklist.map((item, index) => (
       <Item
         {...item}
         toggleComplete={() => {
           const value = !item.complete;
-          const index = props.checklist.findIndex(({ name }) => name === item.name);
           const newItem = {
             name: item.name,
             complete: value,
           } as IChecklist;
           const newChecklist = [...props.checklist];
           newChecklist[index] = newItem;
+          return props.updateChecklist(newChecklist);
+        }}
+        deleteItem={() => {
+          const newChecklist = [...props.checklist];
+          newChecklist.splice(index, 1);
           return props.updateChecklist(newChecklist);
         }}
       />
