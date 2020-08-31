@@ -55,6 +55,7 @@ describe('storage', () => {
     const results = getAll();
     expect(results).toMatchInlineSnapshot(`
       Object {
+        "KEY_CHECKLIST": null,
         "KEY_CITIES": Array [
           Object {
             "country": "United Arab Emirates",
@@ -71,6 +72,7 @@ describe('storage', () => {
         "KEY_COLOR_PRIMARY": null,
         "KEY_COLOR_SECONDARY": null,
         "KEY_DISPLAY_24HR_TIME": true,
+        "KEY_DISPLAY_CHECKLIST": null,
         "KEY_DISPLAY_FONT_SIZE": null,
         "KEY_DISPLAY_SECONDS": false,
         "KEY_HOME": Object {
