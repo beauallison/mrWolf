@@ -6,9 +6,9 @@ const StyledCheckbox = styled.div`
   width: 20px;
   height: 20px;
 
-  border: 1px solid ${(props) => (props.checked ? props.theme.colors.primary : props.theme.colors.onSurface)};
+  border: 1px solid ${(props) => props.theme.colors.secondary};
   border-radius: 4px;
-  background-color: ${(props) => props.theme.colors.onSurface};
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 export interface IProps {
