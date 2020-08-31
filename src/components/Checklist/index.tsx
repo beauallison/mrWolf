@@ -12,6 +12,11 @@ const Container = styled.div`
   margin-right: 20%;
 `;
 
+const ScrollBox = styled.div`
+  max-height: 300px;
+  overflow: scroll;
+`;
+
 export interface IProps {
   checklist?: IChecklist[];
   updateChecklist: void;
@@ -30,25 +35,27 @@ export default (props: IProps) => (
         return props.updateChecklist(newChecklist);
       }}
     />
-    {props.checklist.map((item, index) => (
-      <Item
-        {...item}
-        toggleComplete={() => {
-          const value = !item.complete;
-          const newItem = {
-            name: item.name,
-            complete: value,
-          } as IChecklist;
-          const newChecklist = [...props.checklist];
-          newChecklist[index] = newItem;
-          return props.updateChecklist(newChecklist);
-        }}
-        deleteItem={() => {
-          const newChecklist = [...props.checklist];
-          newChecklist.splice(index, 1);
-          return props.updateChecklist(newChecklist);
-        }}
-      />
-    ))}
+    <ScrollBox>
+      {props.checklist.map((item, index) => (
+        <Item
+          {...item}
+          toggleComplete={() => {
+            const value = !item.complete;
+            const newItem = {
+              name: item.name,
+              complete: value,
+            } as IChecklist;
+            const newChecklist = [...props.checklist];
+            newChecklist[index] = newItem;
+            return props.updateChecklist(newChecklist);
+          }}
+          deleteItem={() => {
+            const newChecklist = [...props.checklist];
+            newChecklist.splice(index, 1);
+            return props.updateChecklist(newChecklist);
+          }}
+        />
+      ))}
+    </ScrollBox>
   </Container>
 );
