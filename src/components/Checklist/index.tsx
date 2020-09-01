@@ -16,6 +16,15 @@ const ScrollBox = styled.div`
   height: 300px;
   overflow: scroll;
   margin-bottom: 30px;
+
+  scrollbar-color: ${(props) => props.theme.colors.surface};
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-corner {
+    background: ${(props) => props.theme.colors.background};
+  }
 `;
 
 export interface IProps {
