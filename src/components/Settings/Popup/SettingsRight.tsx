@@ -30,6 +30,11 @@ export default ({
 }: ISettings) => {
   return (
     <SettingsRight>
+      <TitleBold>Checklist</TitleBold>
+      <SettingContainer>
+        <Title>Display Checklist</Title>
+        <Checkbox checked={displayChecklist} onChange={toggleDisplayChecklist} />
+      </SettingContainer>
       <TitleBold>Theme</TitleBold>
       <SelectContainer>
         <Title>Color Palette</Title>
@@ -42,11 +47,6 @@ export default ({
       <SettingContainer>
         <Title>Secondary Color</Title>
         <ColorPicker color={colorSecondary} onChange={updateColorSecondary} />
-      </SettingContainer>
-      <TitleBold>Checklist</TitleBold>
-      <SettingContainer>
-        <Title>Display Checklist</Title>
-        <Checkbox checked={displayChecklist} onChange={toggleDisplayChecklist} />
       </SettingContainer>
       {!isExtension() && (
         <>
