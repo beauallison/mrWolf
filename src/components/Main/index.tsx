@@ -12,6 +12,10 @@ const Container = styled.div`
 
   height: 100vh;
   width: 100vw;
+
+  overflow: scroll;
+  scrollbar-width: none;
+  scrollbar-color: ${(props) => props.theme.colors.surface};
 `;
 
 const TimeViewer = styled.div`

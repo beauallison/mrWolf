@@ -22,7 +22,7 @@ const ChecklistItem = styled.div`
 
   align-items: center;
 
-  max-width: 250px;
+  max-width: 300px;
 
   &:hover ${DeleteButton} {
     display: block;

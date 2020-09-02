@@ -9,7 +9,7 @@ const NewItem = styled.input`
   color: ${(props) => props.theme.colors.onBackground};
 
   height: 20px;
-  max-width: 250px;
+  max-width: 300px;
 
   border: none;
   border-bottom: 1px solid ${(props) => props.theme.colors.secondary};

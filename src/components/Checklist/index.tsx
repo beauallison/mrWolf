@@ -13,10 +13,11 @@ const Container = styled.div`
 `;
 
 const ScrollBox = styled.div`
-  height: 300px;
+  height: 350px;
   overflow: scroll;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
+  scrollbar-width: none;
   scrollbar-color: ${(props) => props.theme.colors.surface};
 
   &::-webkit-scrollbar,
