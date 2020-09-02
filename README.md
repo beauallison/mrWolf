@@ -67,6 +67,8 @@ I would love your feedback! Please raise issues or if you would like to contribu
 
 ## Acknowledgements
 
+- Checklist idea, inspiration and testing by [Sohil Pandya](https://github.com/sohilpandya)
+
 - Cities and timezones data set from [GeoNames](https://download.geonames.org/export/dump/)
 
 - Countries data set from [Goodtables](https://goodtables.io/github/datasets/country-codes)
