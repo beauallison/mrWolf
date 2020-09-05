@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import IChecklist from '../../IChecklist';
 import Item from './Item';
 import NewItem from './NewItem';
+import MaxItems from './MaxItems';
 
 const Container = styled.div`
   display: flex;
@@ -46,6 +47,14 @@ export default (props: IProps) => (
         return props.updateChecklist(newChecklist);
       }}
     />
+    {props.checklist.length >= 150 && (
+      <MaxItems
+        clearCompletedItems={() => {
+          const newChecklist = props.checklist.filter(({ complete }) => !complete);
+          return props.updateChecklist(newChecklist);
+        }}
+      />
+    )}
     <ScrollBox>
       {props.checklist.map((item, index) => (
         <Item
