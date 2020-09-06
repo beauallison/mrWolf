@@ -5,6 +5,8 @@ import Item from './Item';
 import NewItem from './NewItem';
 import MaxItems from './MaxItems';
 
+const MAX_ITEMS = 150;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,8 +48,9 @@ export default (props: IProps) => (
         const newChecklist = [newItem, ...props.checklist];
         return props.updateChecklist(newChecklist);
       }}
+      maxItemsReached={props.checklist.length >= MAX_ITEMS}
     />
-    {props.checklist.length >= 150 && (
+    {props.checklist.length >= MAX_ITEMS && (
       <MaxItems
         clearCompletedItems={() => {
           const newChecklist = props.checklist.filter(({ complete }) => !complete);

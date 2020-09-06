@@ -23,9 +23,10 @@ const NewItem = styled.input`
 
 export interface IProps {
   createItem: void;
+  maxItemsReached: boolean;
 }
 
-export default ({ createItem }: IProps) => {
+export default ({ maxItemsReached, createItem }: IProps) => {
   const [value, setValue] = useState('');
   return (
     <NewItem
@@ -34,7 +35,7 @@ export default ({ createItem }: IProps) => {
       onChange={(event) => setValue(event.target.value)}
       onKeyDown={async (event) => {
         const newValue = event.target.value;
-        if (newValue.length === 0) return;
+        if (newValue.length === 0 || maxItemsReached) return;
         if (event.key === 'Enter' || event.keyCode === 13) {
           await setValue('');
           return createItem(newValue);

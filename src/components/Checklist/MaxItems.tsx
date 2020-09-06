@@ -27,7 +27,7 @@ const ClearText = styled.p`
   font-family: 'Inter';
   font-size: 13px;
 
-  color: ${(props) => props.theme.colors.onBackground};
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 export interface IProps {
