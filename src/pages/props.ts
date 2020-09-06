@@ -2,7 +2,6 @@ import { useState } from 'react';
 import * as Storage from '../storage';
 import { colorSchemes } from '../components/theme';
 import IChecklist from '../IChecklist';
-import { check } from 'prettier';
 
 export default () => {
   const [loaded, setLoaded] = useState(false);

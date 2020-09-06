@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ManageChecklist complete an item 1`] = `
+Array [
+  Object {
+    "complete": true,
+    "name": "Live by harmless untruths",
+  },
+  Object {
+    "complete": false,
+    "name": "Research the foma",
+  },
+  Object {
+    "complete": true,
+    "name": "Busy busy busy",
+  },
+]
+`;
+
+exports[`ManageChecklist create a new item in the checklist 1`] = `
+Array [
+  Object {
+    "complete": false,
+    "name": "Spin round and round",
+  },
+  Object {
+    "complete": false,
+    "name": "Live by harmless untruths",
+  },
+  Object {
+    "complete": false,
+    "name": "Research the foma",
+  },
+  Object {
+    "complete": true,
+    "name": "Busy busy busy",
+  },
+]
+`;
+
+exports[`ManageChecklist delete an item 1`] = `
+Array [
+  Object {
+    "complete": false,
+    "name": "Live by harmless untruths",
+  },
+  Object {
+    "complete": false,
+    "name": "Research the foma",
+  },
+]
+`;
+
+exports[`ManageChecklist remove completed items from checklist 1`] = `
+Array [
+  Object {
+    "complete": false,
+    "name": "Live by harmless untruths",
+  },
+  Object {
+    "complete": false,
+    "name": "Research the foma",
+  },
+]
+`;

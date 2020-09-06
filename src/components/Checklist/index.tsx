@@ -4,8 +4,9 @@ import IChecklist from '../../IChecklist';
 import Item from './Item';
 import NewItem from './NewItem';
 import MaxItems from './MaxItems';
+import { ManageChecklist } from './ManageChecklist';
 
-const MAX_ITEMS = 150;
+const MAX_ITEMS = 10;
 
 const Container = styled.div`
   display: flex;
@@ -36,49 +37,18 @@ export interface IProps {
   updateChecklist: void;
 }
 
-export default (props: IProps) => (
-  <Container>
-    <NewItem
-      createItem={(item) => {
-        const newItem = {
-          name: item,
-          complete: false,
-        } as IChecklist;
+export default (props: IProps) => {
+  const { createItem, toggleItem, deleteItem, clearCompletedItems } = ManageChecklist(props);
 
-        const newChecklist = [newItem, ...props.checklist];
-        return props.updateChecklist(newChecklist);
-      }}
-      maxItemsReached={props.checklist.length >= MAX_ITEMS}
-    />
-    {props.checklist.length >= MAX_ITEMS && (
-      <MaxItems
-        clearCompletedItems={() => {
-          const newChecklist = props.checklist.filter(({ complete }) => !complete);
-          return props.updateChecklist(newChecklist);
-        }}
-      />
-    )}
-    <ScrollBox>
-      {props.checklist.map((item, index) => (
-        <Item
-          {...item}
-          toggleComplete={() => {
-            const value = !item.complete;
-            const newItem = {
-              name: item.name,
-              complete: value,
-            } as IChecklist;
-            const newChecklist = [...props.checklist];
-            newChecklist[index] = newItem;
-            return props.updateChecklist(newChecklist);
-          }}
-          deleteItem={() => {
-            const newChecklist = [...props.checklist];
-            newChecklist.splice(index, 1);
-            return props.updateChecklist(newChecklist);
-          }}
-        />
-      ))}
-    </ScrollBox>
-  </Container>
-);
+  return (
+    <Container>
+      <NewItem createItem={createItem} maxItemsReached={props.checklist.length >= MAX_ITEMS} />
+      {props.checklist.length >= MAX_ITEMS && <MaxItems clearCompletedItems={clearCompletedItems} />}
+      <ScrollBox>
+        {props.checklist.map((item, index) => (
+          <Item {...item} toggleComplete={() => toggleItem({ item, index })} deleteItem={() => deleteItem({ index })} />
+        ))}
+      </ScrollBox>
+    </Container>
+  );
+};
