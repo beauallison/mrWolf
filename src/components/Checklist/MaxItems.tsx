@@ -25,9 +25,11 @@ const ClearButton = styled.button`
 
 const ClearText = styled.p`
   font-family: 'Inter';
-  font-size: 13px;
+  font-size: 12px;
 
   color: ${(props) => props.theme.colors.primary};
+
+  margin-right: 5px;
 `;
 
 export interface IProps {

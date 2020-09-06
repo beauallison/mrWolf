@@ -29,13 +29,13 @@ const ChecklistItem = styled.div`
   }
 `;
 
-const Title = styled.p`
+const Description = styled.p`
   font-family: 'Inter';
-
   color: ${(props) => props.theme.colors.onBackground};
-  margin-left: 10px;
-
   text-decoration: ${(props) => (props.complete ? 'line-through' : '')};
+
+  word-wrap: anywhere;
+  margin-left: 10px;
 `;
 
 export interface IChecklistItem extends IChecklist {
@@ -46,7 +46,7 @@ export interface IChecklistItem extends IChecklist {
 export default (props: IChecklistItem) => (
   <ChecklistItem>
     <Checkbox checked={props.complete} onChange={props.toggleComplete} />
-    <Title complete={props.complete}>{props.name}</Title>
+    <Description complete={props.complete}>{props.name}</Description>
     <DeleteButton onClick={props.deleteItem}>X</DeleteButton>
   </ChecklistItem>
 );
