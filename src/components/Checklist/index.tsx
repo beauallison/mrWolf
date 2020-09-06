@@ -6,7 +6,7 @@ import NewItem from './NewItem';
 import MaxItems from './MaxItems';
 import { ManageChecklist } from './ManageChecklist';
 
-const MAX_ITEMS = 10;
+const MAX_ITEMS = 150;
 
 const Container = styled.div`
   display: flex;
