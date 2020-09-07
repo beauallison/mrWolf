@@ -39,8 +39,8 @@ const Description = styled.p`
 `;
 
 export interface IChecklistItem extends IChecklist {
-  toggleComplete: void;
-  deleteItem: void;
+  toggleComplete: Function;
+  deleteItem: Function;
 }
 
 export default (props: IChecklistItem) => (

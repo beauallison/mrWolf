@@ -22,7 +22,7 @@ const NewItem = styled.input`
 `;
 
 export interface IProps {
-  createItem: void;
+  createItem: Function;
   maxItemsReached: boolean;
 }
 

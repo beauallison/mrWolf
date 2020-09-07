@@ -13,7 +13,7 @@ const StyledCheckbox = styled.div`
 
 export interface IProps {
   checked: boolean;
-  onChange: void;
+  onChange: Function;
 }
 
 export default ({ checked, onChange }: IProps) => (

@@ -34,7 +34,7 @@ const ScrollBox = styled.div`
 
 export interface IProps {
   checklist?: IChecklist[];
-  updateChecklist: void;
+  updateChecklist: Function;
 }
 
 export default (props: IProps) => {
