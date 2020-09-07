@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Time = styled.h2`
   font-family: 'Metropolis';
-  font-size: 20px;
+  font-size: ${(props) => `${20 * props.theme.fontSize}px`};
 
   color: ${(props) => props.theme.colors.primary};
 
@@ -25,6 +25,7 @@ const Text = styled.p`
   font-family: 'Inter';
   line-height: 26px;
   letter-spacing: 0.5px;
+  font-size: ${(props) => `${16 * props.theme.fontSize}px`};
 
   color: ${(props) => props.theme.colors.secondary};
   margin-bottom: 0px;

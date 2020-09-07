@@ -23,6 +23,7 @@ const Time = styled.h1`
 const Text = styled.p`
   font-family: 'Inter';
   font-weight: 700;
+  font-size: ${(props) => `${16 * props.theme.fontSize}px`};
 
   color: ${(props) => props.theme.colors.secondary};
 

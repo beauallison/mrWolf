@@ -19,6 +19,8 @@ export const SettingsRight = styled.div`
   margin-right: 20px;
 `;
 
+const calculateDisplayFont = (fontSize: number) => Math.round(fontSize * 100 + Number.EPSILON);
+
 export default ({
   colorPalette,
   colorPrimary,
@@ -52,7 +54,7 @@ export default ({
         <ColorPicker color={colorSecondary} onChange={updateColorSecondary} />
       </SettingContainer>
       <SettingContainer>
-        <Title>Font Size</Title>
+        <Title>Font Size - {calculateDisplayFont(displayFontSize)}%</Title>
         <FontSize displayFontSize={displayFontSize} updateDisplayFontSize={updateDisplayFontSize} />
       </SettingContainer>
       {!isExtension() && (
