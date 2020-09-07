@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Time = styled.h1`
   font-family: 'Metropolis';
-  font-size: 50px;
+  font-size: ${(props) => `${50 * props.theme.fontSize}px`};
   margin-bottom: 0px;
 
   color: ${(props) => props.theme.colors.primary};

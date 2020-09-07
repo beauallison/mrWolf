@@ -9,7 +9,7 @@ export default () => {
   const [cities, setCities] = useState();
   const [display24HourTime, setDisplay24HourTime] = useState();
   const [displaySeconds, setDisplaySeconds] = useState();
-  const [displayFontSize, setDisplayFontSize] = useState(0);
+  const [displayFontSize, setDisplayFontSize] = useState(1);
   const [colorPalette, setColorPalette] = useState({ value: 'Original', label: 'Original' });
   const [colorPrimary, setColorPrimary] = useState('#BB86FC');
   const [colorSecondary, setColorSecondary] = useState('#03DAC6');
@@ -28,7 +28,7 @@ export default () => {
     await Storage.saveDisplaySeconds(value);
   };
 
-  const updateDisplayFontSize = async (size: string) => {
+  const updateDisplayFontSize = async (size: number) => {
     await setDisplayFontSize(size);
     await Storage.saveDisplayFontSize(size);
   };

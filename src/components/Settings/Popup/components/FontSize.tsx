@@ -15,7 +15,7 @@ const Button = styled.button`
   font-weight: 700;
   text-align: center;
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     margin-left: 10px;
   }
 `;
@@ -27,13 +27,13 @@ export interface IProps {
 
 export default ({ displayFontSize, updateDisplayFontSize }: IProps) => {
   const increaseFontSize = () => {
-    if (displayFontSize >= 3) return;
-    return updateDisplayFontSize(displayFontSize + 1);
+    if (displayFontSize >= 2) return;
+    return updateDisplayFontSize(displayFontSize + 0.02);
   };
 
   const decreaseFontSize = () => {
-    if (displayFontSize <= -3) return;
-    return updateDisplayFontSize(displayFontSize - 1);
+    if (displayFontSize <= -0.5) return;
+    return updateDisplayFontSize(displayFontSize - 0.02);
   };
 
   return (
