@@ -78,6 +78,7 @@ const Index = () => {
               toggleDisplay24HourTime={toggleDisplay24HourTime}
               displaySeconds={displaySeconds}
               toggleDisplaySeconds={toggleDisplaySeconds}
+              displayFontSize={displayFontSize}
               updateDisplayFontSize={updateDisplayFontSize}
               colorPalette={colorPalette}
               updateColorPalette={updateColorPalette}

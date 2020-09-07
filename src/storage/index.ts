@@ -30,7 +30,7 @@ export const saveDisplaySeconds = (display: boolean) => Storage.saveItem(KEY_DIS
 export const getDisplaySeconds = () => Storage.getItem(KEY_DISPLAY_SECONDS) as boolean;
 
 export const saveDisplayFontSize = (fontSize: string) => Storage.saveItem(KEY_DISPLAY_FONT_SIZE, fontSize);
-export const getDisplayFontSize = () => Storage.getItem(KEY_DISPLAY_FONT_SIZE) as boolean;
+export const getDisplayFontSize = () => Storage.getItem(KEY_DISPLAY_FONT_SIZE) as number;
 
 export const saveColorPalette = (palette: string) => Storage.saveItem(KEY_COLOR_PALETTE, palette);
 export const getColorPalette = () => Storage.getItem(KEY_COLOR_PALETTE);

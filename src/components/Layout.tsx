@@ -4,7 +4,7 @@ import { ThemeProvider } from 'emotion-theming';
 import { theme } from './theme';
 
 export interface ILayout {
-  displayFontSize?: boolean;
+  displayFontSize?: number;
   colorPrimary?: string;
   colorSecondary?: string;
 }
