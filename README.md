@@ -3,7 +3,7 @@
 ![CI](https://github.com/beauallison/mrWolf/workflows/CI/badge.svg)
 [![Percy.io](https://percy.io/static/images/percy-badge.svg)](https://percy.io/beauallison/mrWolf)
 
-Browser Extension and Web App made with React & Emotion for helping you sync timezones across the globe.
+Browser Extension and Web App made with React, Emotion, & TypeScript for helping you sync timezones across the globe.
 
 ![](./preview.gif)
 
@@ -19,21 +19,24 @@ Available on the Extension Stores for
 
 - [Chrome](https://chrome.google.com/webstore/detail/mr-wolf/jkelocfjplnpcpjnmbamgfohobillnhf/)
 
+- [Edge](https://microsoftedge.microsoft.com/addons/detail/mr-wolf/ihalkbldgbodccfefbohcfeckdgdodgo)
+
 ## Features List
 
-| Feature                      |  Status   |
-| ---------------------------- | :-------: |
-| >6000 Cities                 |    ✅     |
-| 24 Hour Time Toggle          |    ✅     |
-| Display Seconds Toggle       |    ✅     |
-| Browser Storage & Sync       |    ✅     |
-| Web Version                  |    ✅     |
-| Firefox Extension            |    ✅     |
-| Chrome Extension             |    ✅     |
-| Edge Extension               | In Review |
-| Theme Support                |    ✅     |
-| Custom Font Sizes            |    🔜     |
-| Plus / Minus Time Calculator |    🔜     |
+| Feature                      | Status |
+| ---------------------------- | :----: |
+| >6000 Cities                 |   ✅   |
+| 24 Hour Time Toggle          |   ✅   |
+| Display Seconds Toggle       |   ✅   |
+| Browser Storage & Sync       |   ✅   |
+| Web Version                  |   ✅   |
+| Firefox Extension            |   ✅   |
+| Chrome Extension             |   ✅   |
+| Edge Extension               |   ✅   |
+| Theme Support                |   ✅   |
+| Custom Font Sizes            |   🔜   |
+| Plus / Minus Time Calculator |   🔜   |
+| Checklist                    |   🔜   |
 
 ## Running Locally
 
@@ -63,6 +66,8 @@ For more information view the instructions at [Mozilla](https://developer.mozill
 I would love your feedback! Please raise issues or if you would like to contribute raise any PRs for fixes you find.
 
 ## Acknowledgements
+
+- Checklist idea, inspiration and testing by [Sohil Pandya](https://github.com/sohilpandya)
 
 - Cities and timezones data set from [GeoNames](https://download.geonames.org/export/dump/)
 
