@@ -14,6 +14,10 @@ const DeleteButton = styled.button`
   color: ${(props) => props.theme.colors.secondary};
   text-align: center;
   font-size: 12px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const ChecklistItem = styled.div`
