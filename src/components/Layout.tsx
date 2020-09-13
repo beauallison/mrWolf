@@ -4,7 +4,7 @@ import { ThemeProvider } from 'emotion-theming';
 import { theme } from './theme';
 
 export interface ILayout {
-  displayFontSize?: boolean;
+  displayFontSize?: number;
   colorPrimary?: string;
   colorSecondary?: string;
 }
@@ -23,8 +23,18 @@ export default ({ displayFontSize, colorPrimary, colorSecondary, children }) => 
       <Global
         styles={css`
           body {
-            background-color: ${theme.colors.background};
+            background-color: ${customTheme.colors.background};
             margin: 0px;
+          }
+
+          scrollbar-width: none;
+          scrollbar-color: ${customTheme.colors.surface};
+
+          &::-webkit-scrollbar,
+          &::-webkit-scrollbar-track,
+          &::-webkit-scrollbar-thumb,
+          &::-webkit-scrollbar-corner {
+            background: ${customTheme.colors.background};
           }
 
           @font-face {

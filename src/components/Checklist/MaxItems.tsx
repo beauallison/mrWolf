@@ -33,7 +33,7 @@ const ClearText = styled.p`
 `;
 
 export interface IProps {
-  clearCompletedItems: void;
+  clearCompletedItems: Function;
 }
 
 export default (props: IProps) => (

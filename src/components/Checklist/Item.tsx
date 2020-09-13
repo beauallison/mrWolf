@@ -14,11 +14,16 @@ const DeleteButton = styled.button`
   color: ${(props) => props.theme.colors.secondary};
   text-align: center;
   font-size: 12px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const ChecklistItem = styled.div`
   display: grid;
   grid-template-columns: 10% 80% 10%;
+  font-size: ${(props) => `${16 * props.theme.fontSize}px`};
 
   align-items: center;
 
@@ -39,8 +44,8 @@ const Description = styled.p`
 `;
 
 export interface IChecklistItem extends IChecklist {
-  toggleComplete: void;
-  deleteItem: void;
+  toggleComplete: Function;
+  deleteItem: Function;
 }
 
 export default (props: IChecklistItem) => (

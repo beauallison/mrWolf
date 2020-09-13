@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 const NewItem = styled.input`
   font-family: 'Inter';
-  font-size: 13px;
+  font-size: ${(props) => `${13 * props.theme.fontSize}px`};
 
   background-color: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.onBackground};
@@ -22,7 +22,7 @@ const NewItem = styled.input`
 `;
 
 export interface IProps {
-  createItem: void;
+  createItem: Function;
   maxItemsReached: boolean;
 }
 

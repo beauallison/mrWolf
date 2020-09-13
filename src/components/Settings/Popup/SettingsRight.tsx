@@ -4,6 +4,7 @@ import ColorPicker from './components/ColorPicker';
 import ThemeSelector from './components/ThemeSelector';
 import styled from '@emotion/styled';
 import Checkbox from './components/Checkbox';
+import FontSize from './components/FontSize';
 import {
   ExtensionLink,
   GithubLink,
@@ -18,10 +19,14 @@ export const SettingsRight = styled.div`
   margin-right: 20px;
 `;
 
+const calculateDisplayFont = (fontSize: number) => Math.round(fontSize * 100 + Number.EPSILON);
+
 export default ({
   colorPalette,
   colorPrimary,
   colorSecondary,
+  displayFontSize,
+  updateDisplayFontSize,
   updateColorPalette,
   updateColorPrimary,
   updateColorSecondary,
@@ -47,6 +52,10 @@ export default ({
       <SettingContainer>
         <Title>Secondary Color</Title>
         <ColorPicker color={colorSecondary} onChange={updateColorSecondary} />
+      </SettingContainer>
+      <SettingContainer>
+        <Title>Font Size - {calculateDisplayFont(displayFontSize)}%</Title>
+        <FontSize displayFontSize={displayFontSize} updateDisplayFontSize={updateDisplayFontSize} />
       </SettingContainer>
       {!isExtension() && (
         <>

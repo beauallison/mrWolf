@@ -22,7 +22,7 @@ const MenuList = ({ options, children, maxHeight, getValue }) => {
 export interface IProps {
   value: ICity | ICity[];
   isMulti?: boolean;
-  onChange: void;
+  onChange: Function;
 }
 
 const createLocalOptions = (isMulti) => {

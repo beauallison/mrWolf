@@ -23,20 +23,21 @@ Available on the Extension Stores for
 
 ## Features List
 
-| Feature                      | Status |
-| ---------------------------- | :----: |
-| >6000 Cities                 |   ✅   |
-| 24 Hour Time Toggle          |   ✅   |
-| Display Seconds Toggle       |   ✅   |
-| Browser Storage & Sync       |   ✅   |
-| Web Version                  |   ✅   |
-| Firefox Extension            |   ✅   |
-| Chrome Extension             |   ✅   |
-| Edge Extension               |   ✅   |
-| Theme Support                |   ✅   |
-| Custom Font Sizes            |   🔜   |
-| Plus / Minus Time Calculator |   🔜   |
-| Checklist                    |   🔜   |
+| Feature                                 | Status |
+| --------------------------------------- | :----: |
+| >6000 Cities                            |   ✅   |
+| 24 Hour Time Toggle                     |   ✅   |
+| Display Seconds Toggle                  |   ✅   |
+| Browser Storage & Sync                  |   ✅   |
+| Web Version                             |   ✅   |
+| Firefox Extension                       |   ✅   |
+| Chrome Extension                        |   ✅   |
+| Edge Extension                          |   ✅   |
+| Theme Support                           |   ✅   |
+| Simple Custom Font Sizes                |   🔜   |
+| Plus / Minus Time Calculator            |   🔜   |
+| Checklist                               |   🔜   |
+| Advanced Customisation (Fonts, Colours) |   🕒   |
 
 ## Running Locally
 

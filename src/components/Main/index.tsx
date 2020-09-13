@@ -31,7 +31,7 @@ export interface IProps {
   displaySeconds?: boolean;
   displayChecklist?: boolean;
   checklist: IChecklist[];
-  updateChecklist: void;
+  updateChecklist: Function;
 }
 
 const sortChecklist = (checklist: IChecklist[]) => checklist.sort((a, b) => Number(a.complete) - Number(b.complete));

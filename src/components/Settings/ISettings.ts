@@ -2,21 +2,21 @@ import ICity from '../../ICity';
 
 export default interface ISettings {
   home: ICity;
-  setHome: void;
+  setHome: Function;
   cities: ICity[];
-  setCities: void;
+  setCities: Function;
   display24HourTime: boolean;
-  toggleDisplay24HourTime: void;
+  toggleDisplay24HourTime: Function;
   displaySeconds: boolean;
-  toggleDisplaySeconds: void;
-  displayFontSize: boolean;
-  updateDisplayFontSize: void;
+  toggleDisplaySeconds: Function;
+  displayFontSize: number;
+  updateDisplayFontSize: Function;
   colorPalette: string;
-  updateColorPalette: void;
+  updateColorPalette: Function;
   colorPrimary: string;
-  updateColorPrimary: void;
+  updateColorPrimary: Function;
   colorSecondary: string;
-  updateColorSecondary: void;
+  updateColorSecondary: Function;
   displayChecklist: boolean;
-  toggleDisplayChecklist: void;
+  toggleDisplayChecklist: Function;
 }
