@@ -36,11 +36,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyPlugin([
-      { from: './src/index.html', to: './index.html' },
-      { from: './src/fonts/', to: './fonts' },
-      { from: './src/manifest.json', to: './manifest.json' },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/index.html', to: './index.html' },
+        { from: './src/fonts/', to: './fonts' },
+        { from: './src/manifest.json', to: './manifest.json' },
+      ],
+    }),
     new ManifestVersionSyncPlugin(),
   ],
   optimization: {
