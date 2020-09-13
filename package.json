@@ -43,6 +43,7 @@
     "@babel/runtime": "^7.11.2",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "changelog-parser": "^2.8.0",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
     "emotion-theming": "^10.0.27",
