@@ -7,11 +7,13 @@ const Container = styled.div`
   z-index: 3;
 
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   width: 300px;
   height: 200px;
 
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 30px;
 
   background-color: ${(props) => props.theme.colors.surface};
@@ -20,6 +22,8 @@ const Container = styled.div`
 const H2 = styled.h1`
   color: ${(props) => props.theme.colors.primary};
   font-family: 'Inter';
+
+  font-size: 20px;
 `;
 
 const Description = styled.p`
@@ -32,10 +36,6 @@ const Item = styled.p`
   font-family: 'Metropolis';
 `;
 
-const GithubLink = styled.a`
-  color: ${(props) => props.theme.colors.onBackground};
-`;
-
 export interface IProps {
   currentVersion: string;
   changelogToDisplay: {};
@@ -44,7 +44,7 @@ export interface IProps {
 
 export default ({ currentVersion, changelogToDisplay, setChangelogToDisplay }) => (
   <Container>
-    <H2>New Version {currentVersion}</H2>
+    <H2>New Version - v{currentVersion}</H2>
     {changelogToDisplay.parsed.Added.map((item) => (
       <Item>- {item}</Item>
     ))}
