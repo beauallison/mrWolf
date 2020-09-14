@@ -80,8 +80,8 @@ export default () => {
     await Storage.saveChecklist(checklist);
   };
 
-  const checkVersion = async (version: string) => {
-    if (version !== currentVersion && home) {
+  const checkVersion = async (version: string, loadedHome: any) => {
+    if (version !== currentVersion && loadedHome) {
       await setChangelogToDisplay(Changelog);
       await Storage.saveVersion(currentVersion);
     }
@@ -114,7 +114,7 @@ export default () => {
     KEY_COLOR_SECONDARY && (await setColorSecondary(KEY_COLOR_SECONDARY));
     KEY_DISPLAY_CHECKLIST && (await setDisplayChecklist(KEY_DISPLAY_CHECKLIST));
     KEY_CHECKLIST && (await setChecklist(KEY_CHECKLIST));
-    await checkVersion(KEY_VERSION);
+    await checkVersion(KEY_VERSION, KEY_HOME);
     await setLoaded(true);
   }
 
