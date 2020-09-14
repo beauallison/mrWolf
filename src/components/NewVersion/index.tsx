@@ -10,11 +10,11 @@ const Container = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  min-height: 200px;
 
   border-radius: 10px;
-  padding: 30px;
+  padding: 35px;
 
   background-color: ${(props) => props.theme.colors.surface};
 `;
@@ -26,14 +26,25 @@ const H2 = styled.h1`
   font-size: 20px;
 `;
 
-const Description = styled.p`
-  color: ${(props) => props.theme.colors.onBackground};
-  font-family: 'Metropolis';
-`;
-
 const Item = styled.p`
   color: ${(props) => props.theme.colors.onSurface};
   font-family: 'Metropolis';
+`;
+
+const OkButton = styled.button`
+  background-color: ${(props) => props.theme.colors.background};
+  border: solid 1px ${(props) => props.theme.colors.secondary};
+  border-radius: 5px;
+  width: 50px;
+  height: 25px;
+
+  color: ${(props) => props.theme.colors.secondary};
+  text-align: center;
+  font-size: 12px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export interface IProps {
@@ -48,5 +59,6 @@ export default ({ currentVersion, changelogToDisplay, setChangelogToDisplay }) =
     {changelogToDisplay.parsed.Added.map((item) => (
       <Item>- {item}</Item>
     ))}
+    <OkButton onClick={() => setChangelogToDisplay(undefined)}>Ok</OkButton>
   </Container>
 );
