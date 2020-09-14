@@ -3,8 +3,7 @@ import * as Storage from '../storage';
 import { colorSchemes } from '../components/theme';
 import IChecklist from '../IChecklist';
 import Package from '../../package.json';
-
-const CURRENT_VERSION = Package.version;
+import Changelog from '../../changelog.json';
 
 export default () => {
   const [loaded, setLoaded] = useState(false);
@@ -18,7 +17,9 @@ export default () => {
   const [colorSecondary, setColorSecondary] = useState('#03DAC6');
   const [displayChecklist, setDisplayChecklist] = useState(false);
   const [checklist, setChecklist] = useState([]);
-  const [displayNewVersionModal, setDisplayNewVersionModal] = useState(false);
+  const [changelogToDisplay, setChangelogToDisplay] = useState();
+
+  const currentVersion = Package.version;
 
   const toggleDisplay24HourTime = async () => {
     const value = !display24HourTime;
@@ -80,11 +81,11 @@ export default () => {
   };
 
   const checkVersion = async (version: string) => {
-    if(version !== CURRENT_VERSION) {
-      await setDisplayNewVersionModal(true);
-      await Storage.saveVersion(CURRENT_VERSION);
-    }
-  }
+    //if (version !== currentVersion && home) {
+    await setChangelogToDisplay(Changelog);
+    await Storage.saveVersion(currentVersion);
+    //}
+  };
 
   async function load() {
     if (loaded) return;
@@ -133,6 +134,8 @@ export default () => {
       colorSecondary,
       displayChecklist,
       checklist,
+      changelogToDisplay,
+      currentVersion,
     },
     functions: {
       load,
@@ -144,6 +147,7 @@ export default () => {
       updateColorSecondary,
       toggleDisplayChecklist,
       updateChecklist,
+      setChangelogToDisplay,
     },
   };
 };
