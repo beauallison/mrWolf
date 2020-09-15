@@ -80,6 +80,7 @@ describe('storage', () => {
           "name": "Dubai",
           "timezone": "Asia/Dubai",
         },
+        "KEY_VERSION": null,
       }
     `);
   });

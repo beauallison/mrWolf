@@ -1,8 +1,9 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const ManifestVersionSyncPlugin = require('webpack-manifest-version-sync-plugin');
+const generateChangelog = require('./generateChangelog');
 
-module.exports = {
+const config = {
   entry: {
     index: './src/pages/index.tsx',
   },
@@ -41,6 +42,7 @@ module.exports = {
         { from: './src/index.html', to: './index.html' },
         { from: './src/fonts/', to: './fonts' },
         { from: './src/manifest.json', to: './manifest.json' },
+        { from: './changelog.json', to: './changelog.json' },
       ],
     }),
     new ManifestVersionSyncPlugin(),
@@ -50,4 +52,9 @@ module.exports = {
   },
   mode: 'production',
   stats: 'minimal',
+};
+
+module.exports = async () => {
+  await generateChangelog();
+  return config;
 };

@@ -6,6 +6,7 @@ import Main from '../components/Main';
 import Welcome from '../components/Welcome';
 import Responsive from '../components/Responsive';
 import Settings from '../components/Settings';
+import NewVersion from '../components/NewVersion';
 import Props from './props';
 
 const schema = {
@@ -32,6 +33,8 @@ const Index = () => {
     colorSecondary,
     displayChecklist,
     checklist,
+    changelogToDisplay,
+    currentVersion,
   } = state;
   const {
     load,
@@ -43,6 +46,7 @@ const Index = () => {
     updateColorSecondary,
     toggleDisplayChecklist,
     updateChecklist,
+    setChangelogToDisplay,
   } = functions;
 
   useEffect(() => {
@@ -57,15 +61,24 @@ const Index = () => {
           <Responsive.Mobile />
           <Responsive.Desktop>
             {home ? (
-              <Main
-                home={home}
-                cities={cities}
-                display24HourTime={display24HourTime}
-                displaySeconds={displaySeconds}
-                displayChecklist={displayChecklist}
-                checklist={checklist}
-                updateChecklist={updateChecklist}
-              />
+              <>
+                <Main
+                  home={home}
+                  cities={cities}
+                  display24HourTime={display24HourTime}
+                  displaySeconds={displaySeconds}
+                  displayChecklist={displayChecklist}
+                  checklist={checklist}
+                  updateChecklist={updateChecklist}
+                />
+                {changelogToDisplay && (
+                  <NewVersion
+                    changelogToDisplay={changelogToDisplay}
+                    currentVersion={currentVersion}
+                    setChangelogToDisplay={setChangelogToDisplay}
+                  />
+                )}
+              </>
             ) : (
               <Welcome />
             )}

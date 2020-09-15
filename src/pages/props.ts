@@ -2,6 +2,8 @@ import { useState } from 'react';
 import * as Storage from '../storage';
 import { colorSchemes } from '../components/theme';
 import IChecklist from '../IChecklist';
+import Package from '../../package.json';
+import Changelog from '../../changelog.json';
 
 export default () => {
   const [loaded, setLoaded] = useState(false);
@@ -15,6 +17,9 @@ export default () => {
   const [colorSecondary, setColorSecondary] = useState('#03DAC6');
   const [displayChecklist, setDisplayChecklist] = useState(false);
   const [checklist, setChecklist] = useState([]);
+  const [changelogToDisplay, setChangelogToDisplay] = useState();
+
+  const currentVersion = Package.version;
 
   const toggleDisplay24HourTime = async () => {
     const value = !display24HourTime;
@@ -75,6 +80,13 @@ export default () => {
     await Storage.saveChecklist(checklist);
   };
 
+  const checkVersion = async (version: string, loadedHome: any) => {
+    if (version !== currentVersion) {
+      await Storage.saveVersion(currentVersion);
+      loadedHome && (await setChangelogToDisplay(Changelog));
+    }
+  };
+
   async function load() {
     if (loaded) return;
     const result = await Storage.getAll();
@@ -89,6 +101,7 @@ export default () => {
       KEY_COLOR_SECONDARY,
       KEY_DISPLAY_CHECKLIST,
       KEY_CHECKLIST,
+      KEY_VERSION,
     } = result;
 
     KEY_HOME && (await setHome(KEY_HOME));
@@ -101,6 +114,7 @@ export default () => {
     KEY_COLOR_SECONDARY && (await setColorSecondary(KEY_COLOR_SECONDARY));
     KEY_DISPLAY_CHECKLIST && (await setDisplayChecklist(KEY_DISPLAY_CHECKLIST));
     KEY_CHECKLIST && (await setChecklist(KEY_CHECKLIST));
+    await checkVersion(KEY_VERSION, KEY_HOME);
     await setLoaded(true);
   }
 
@@ -120,6 +134,8 @@ export default () => {
       colorSecondary,
       displayChecklist,
       checklist,
+      changelogToDisplay,
+      currentVersion,
     },
     functions: {
       load,
@@ -131,6 +147,7 @@ export default () => {
       updateColorSecondary,
       toggleDisplayChecklist,
       updateChecklist,
+      setChangelogToDisplay,
     },
   };
 };

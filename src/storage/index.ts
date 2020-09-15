@@ -16,6 +16,7 @@ const KEY_COLOR_PRIMARY = 'KEY_COLOR_PRIMARY';
 const KEY_COLOR_SECONDARY = 'KEY_COLOR_SECONDARY';
 const KEY_DISPLAY_CHECKLIST = 'KEY_DISPLAY_CHECKLIST';
 const KEY_CHECKLIST = 'KEY_CHECKLIST';
+const KEY_VERSION = 'KEY_VERSION';
 
 export const saveHome = (home: ICity) => Storage.saveItem(KEY_HOME, home);
 export const getHome = () => Storage.getItem(KEY_HOME) as ICity;
@@ -47,6 +48,9 @@ export const getDisplayChecklist = () => Storage.getItem(KEY_DISPLAY_CHECKLIST) 
 export const saveChecklist = (checklist: IChecklist[]) => Storage.saveItem(KEY_CHECKLIST, checklist);
 export const getChecklist = () => Storage.getItem(KEY_CHECKLIST);
 
+export const saveVersion = (version: string) => Storage.saveItem(KEY_VERSION, version);
+export const getVersion = () => Storage.getItem(KEY_VERSION) as string;
+
 interface IGetAll {
   KEY_HOME: ICity;
   KEY_CITIES: ICity[];
@@ -58,6 +62,7 @@ interface IGetAll {
   KEY_COLOR_SECONDARY: string;
   KEY_DISPLAY_CHECKLIST: boolean;
   KEY_CHECKLIST: IChecklist[];
+  KEY_VERSION: string;
 }
 
 export const getAll = () =>
@@ -72,4 +77,5 @@ export const getAll = () =>
     KEY_COLOR_SECONDARY,
     KEY_DISPLAY_CHECKLIST,
     KEY_CHECKLIST,
+    KEY_VERSION,
   ]) as IGetAll;
