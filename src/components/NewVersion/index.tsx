@@ -36,11 +36,11 @@ const OkButton = styled.button`
   border: solid 1px ${(props) => props.theme.colors.secondary};
   border-radius: 5px;
   width: 50px;
-  height: 25px;
+  height: 35px;
 
   color: ${(props) => props.theme.colors.secondary};
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
 
   &:focus {
     outline: none;
