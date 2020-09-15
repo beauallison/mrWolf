@@ -81,9 +81,9 @@ export default () => {
   };
 
   const checkVersion = async (version: string, loadedHome: any) => {
-    if (version !== currentVersion && loadedHome) {
-      await setChangelogToDisplay(Changelog);
+    if (version !== currentVersion) {
       await Storage.saveVersion(currentVersion);
+      loadedHome && (await setChangelogToDisplay(Changelog));
     }
   };
 
