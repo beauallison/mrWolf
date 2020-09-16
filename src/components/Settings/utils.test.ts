@@ -15,7 +15,7 @@ describe('utils', () => {
 
   it('should generate city options', () => {
     const options = generateOptions();
-    expect(options.length).toEqual(6183);
+    expect(options.length).toEqual(6184);
     expect(options[0]).toMatchSnapshot();
   });
 

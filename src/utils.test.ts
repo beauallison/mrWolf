@@ -3,7 +3,7 @@ import { generateTime, citiesList } from './utils';
 describe('utils', () => {
   it('should create cities list', () => {
     const list = citiesList();
-    expect(list.length).toEqual(6183);
+    expect(list.length).toEqual(6184);
   });
 
   it('should generate time', () => {

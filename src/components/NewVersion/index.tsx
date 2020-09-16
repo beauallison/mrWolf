@@ -14,6 +14,7 @@ const Container = styled.div`
   min-height: 200px;
 
   border-radius: 10px;
+  border: solid 1px ${(props) => props.theme.colors.onBackground};
   padding: 35px;
 
   background-color: ${(props) => props.theme.colors.surface};
