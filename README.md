@@ -34,9 +34,9 @@ Available on the Extension Stores for
 | Chrome Extension                        |   ✅   |
 | Edge Extension                          |   ✅   |
 | Theme Support                           |   ✅   |
-| Simple Custom Font Sizes                |   🔜   |
+| Simple Custom Font Sizes                |   ✅   |
 | Plus / Minus Time Calculator            |   🔜   |
-| Checklist                               |   🔜   |
+| Checklist                               |   ✅   |
 | Advanced Customisation (Fonts, Colours) |   🕒   |
 
 ## Running Locally
@@ -66,9 +66,13 @@ For more information view the instructions at [Mozilla](https://developer.mozill
 
 I would love your feedback! Please raise issues or if you would like to contribute raise any PRs for fixes you find.
 
-## Acknowledgements
+## Special Thanks
 
-- Checklist idea, inspiration and testing by [Sohil Pandya](https://github.com/sohilpandya)
+- To [Cameron Murphy](https://github.com/cameronmurphy) for early testing and finding all the meddlesome bugs
+
+- To [Sohil Pandya](https://github.com/sohilpandya) for the Checklist idea, inspiration and testing
+
+## Acknowledgements
 
 - Cities and timezones data set from [GeoNames](https://download.geonames.org/export/dump/)
 
