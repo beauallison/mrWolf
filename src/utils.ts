@@ -19,10 +19,17 @@ export interface IGenerateTime {
   timezone: string;
   display24HourTime?: boolean;
   displaySeconds?: boolean;
+  timeAdjust?: number;
 }
 
 export const generateTime = (props: IGenerateTime) => {
   const hourFormat = props.display24HourTime ? 'HH:mm' : 'hh:mm';
   const format = props.displaySeconds ? `${hourFormat}:ss` : hourFormat;
-  return moment().tz(props.timezone).format(format);
+  let time = moment().tz(props.timezone);
+
+  if (props.timeAdjust && props.timeAdjust !== 0) {
+    return time.add(props.timeAdjust, 'hours').format(format);
+  }
+
+  return time.format(format);
 };

@@ -34,6 +34,7 @@ const Text = styled.p`
 
 export interface IProps extends ICity {
   display24HourTime?: boolean;
+  timeAdjust: number;
 }
 
 export default ({ name, country, ...timeProps }: IProps) => {
@@ -42,7 +43,7 @@ export default ({ name, country, ...timeProps }: IProps) => {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setCurrentTime(generateTime(timeProps));
-    }, 1000);
+    }, 10);
 
     return () => {
       window.clearInterval(timer);

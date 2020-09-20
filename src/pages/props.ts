@@ -9,6 +9,7 @@ export default () => {
   const [loaded, setLoaded] = useState(false);
   const [home, setHome] = useState();
   const [cities, setCities] = useState();
+  const [timeAdjust, setTimeAdjust] = useState(0);
   const [display24HourTime, setDisplay24HourTime] = useState();
   const [displaySeconds, setDisplaySeconds] = useState();
   const [displayFontSize, setDisplayFontSize] = useState(1);
@@ -136,6 +137,7 @@ export default () => {
       checklist,
       changelogToDisplay,
       currentVersion,
+      timeAdjust,
     },
     functions: {
       load,
@@ -148,6 +150,7 @@ export default () => {
       toggleDisplayChecklist,
       updateChecklist,
       setChangelogToDisplay,
+      setTimeAdjust,
     },
   };
 };
