@@ -35,7 +35,16 @@ const Text = styled.p`
 `;
 
 const TimeButtons = styled.div`
+  display: none;
+`;
+
+const HoverArea = styled.div`
   margin-left: 5px;
+  width: 200px;
+  height: 200px;
+  &:hover ${TimeButtons} {
+    display: block;
+  }
 `;
 
 const TimeText = styled.p`
@@ -101,16 +110,18 @@ export default ({ name, country, setTimeAdjust, ...timeProps }: IHome) => {
     <Container>
       <Time>{currentTime}</Time>
       <Text>{`${name}, ${country}`}</Text>
-      <TimeButtons>
-        <Button onClick={timeAdjustDecrease}>-</Button>
-        <Button onClick={timeAdjustIncrease}>+</Button>
-        {timeProps.timeAdjust !== 0 ? (
-          <>
-            <Button onClick={timeAdjustReset}>R</Button>
-            <TimeText>Modifier {timeProps.timeAdjust}</TimeText>
-          </>
-        ) : null}
-      </TimeButtons>
+      <HoverArea>
+        <TimeButtons>
+          <Button onClick={timeAdjustDecrease}>-</Button>
+          <Button onClick={timeAdjustIncrease}>+</Button>
+          {timeProps.timeAdjust !== 0 ? (
+            <>
+              <Button onClick={timeAdjustReset}>R</Button>
+              <TimeText>Modifier {timeProps.timeAdjust}</TimeText>
+            </>
+          ) : null}
+        </TimeButtons>
+      </HoverArea>
     </Container>
   );
 };
