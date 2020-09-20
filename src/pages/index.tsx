@@ -35,6 +35,7 @@ const Index = () => {
     checklist,
     changelogToDisplay,
     currentVersion,
+    timeAdjust,
   } = state;
   const {
     load,
@@ -47,6 +48,7 @@ const Index = () => {
     toggleDisplayChecklist,
     updateChecklist,
     setChangelogToDisplay,
+    setTimeAdjust,
   } = functions;
 
   useEffect(() => {
@@ -70,6 +72,8 @@ const Index = () => {
                   displayChecklist={displayChecklist}
                   checklist={checklist}
                   updateChecklist={updateChecklist}
+                  timeAdjust={timeAdjust}
+                  setTimeAdjust={setTimeAdjust}
                 />
                 {changelogToDisplay && (
                   <NewVersion
