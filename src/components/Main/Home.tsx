@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { generateTime } from '../../utils';
 import ICity from '../../ICity';
-import props from '../../pages/props';
 
 const Container = styled.div`
   display: flex;
@@ -36,17 +35,17 @@ const Text = styled.p`
 `;
 
 const TimeButtons = styled.div`
-  margin-top: 10px;
+  margin-left: 5px;
 `;
 
 const TimeText = styled.p`
   font-family: 'Inter';
   font-weight: 700;
-  font-size: ${(props) => `${12 * props.theme.fontSize}px`};
+  font-size: ${(props) => `${14 * props.theme.fontSize}px`};
 
   color: ${(props) => props.theme.colors.secondary};
 
-  margin-top: 2px;
+  margin-top: 4px;
 `;
 
 const Button = styled.button`
@@ -62,7 +61,7 @@ const Button = styled.button`
   text-align: center;
 
   &:not(:first-child) {
-    margin-left: 10px;
+    margin-left: 7px;
   }
 `;
 
@@ -105,8 +104,12 @@ export default ({ name, country, setTimeAdjust, ...timeProps }: IHome) => {
       <TimeButtons>
         <Button onClick={timeAdjustDecrease}>-</Button>
         <Button onClick={timeAdjustIncrease}>+</Button>
-        <Button onClick={timeAdjustReset}>R</Button>
-        <TimeText>modifier {timeProps.timeAdjust}</TimeText>
+        {timeProps.timeAdjust !== 0 ? (
+          <>
+            <Button onClick={timeAdjustReset}>R</Button>
+            <TimeText>Modifier {timeProps.timeAdjust}</TimeText>
+          </>
+        ) : null}
       </TimeButtons>
     </Container>
   );
