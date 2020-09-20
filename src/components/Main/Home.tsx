@@ -62,25 +62,21 @@ export interface IHome extends ICity {
 export default ({ name, country, setTimeAdjust, ...timeProps }: IHome) => {
   const [currentTime, setCurrentTime] = useState(generateTime(timeProps));
 
-  const updateTime = () => setCurrentTime(generateTime(timeProps));
-
-  const timeAdjustDecrease = async () => {
+  const timeAdjustDecrease = () => {
     if (timeProps.timeAdjust <= -24) return;
-    await setTimeAdjust(timeProps.timeAdjust - 1);
-    updateTime();
+    return setTimeAdjust(timeProps.timeAdjust - 1);
   };
 
-  const timeAdjustIncrease = async () => {
+  const timeAdjustIncrease = () => {
     if (timeProps.timeAdjust >= 24) return;
-    await setTimeAdjust(timeProps.timeAdjust + 1);
-    updateTime();
+    return setTimeAdjust(timeProps.timeAdjust + 1);
   };
 
   const timeAdjustReset = () => setTimeAdjust(0);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      updateTime();
+      setCurrentTime(generateTime(timeProps));
     }, 1000);
 
     return () => {

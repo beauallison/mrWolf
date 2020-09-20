@@ -14,12 +14,13 @@ const Container = styled.div`
 export interface IProps {
   cities: ICity[];
   display24HourTime?: boolean;
+  timeAdjust: number;
 }
 
-export default ({ cities, display24HourTime }: IProps) => (
+export default ({ cities, display24HourTime, timeAdjust }: IProps) => (
   <Container>
     {cities.map((city) => (
-      <City {...city} display24HourTime={display24HourTime} />
+      <City {...city} display24HourTime={display24HourTime} timeAdjust={timeAdjust} />
     ))}
   </Container>
 );
