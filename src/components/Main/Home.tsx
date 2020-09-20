@@ -35,6 +35,20 @@ const Text = styled.p`
   margin-left: 5px;
 `;
 
+const TimeButtons = styled.div`
+  margin-top: 10px;
+`;
+
+const TimeText = styled.p`
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: ${(props) => `${12 * props.theme.fontSize}px`};
+
+  color: ${(props) => props.theme.colors.secondary};
+
+  margin-top: 2px;
+`;
+
 const Button = styled.button`
   width: 28px;
   height: 28px;
@@ -47,7 +61,7 @@ const Button = styled.button`
   font-weight: 700;
   text-align: center;
 
-  &:nth-of-type(2) {
+  &:not(:first-child) {
     margin-left: 10px;
   }
 `;
@@ -77,7 +91,7 @@ export default ({ name, country, setTimeAdjust, ...timeProps }: IHome) => {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setCurrentTime(generateTime(timeProps));
-    }, 1000);
+    }, 10);
 
     return () => {
       window.clearInterval(timer);
@@ -88,10 +102,12 @@ export default ({ name, country, setTimeAdjust, ...timeProps }: IHome) => {
     <Container>
       <Time>{currentTime}</Time>
       <Text>{`${name}, ${country}`}</Text>
-      <Button onClick={timeAdjustDecrease}>-</Button>
-      <Button onClick={timeAdjustIncrease}>+</Button>
-      <Button onClick={timeAdjustReset}>R</Button>
-      <Text>{timeProps.timeAdjust}</Text>
+      <TimeButtons>
+        <Button onClick={timeAdjustDecrease}>-</Button>
+        <Button onClick={timeAdjustIncrease}>+</Button>
+        <Button onClick={timeAdjustReset}>R</Button>
+        <TimeText>modifier {timeProps.timeAdjust}</TimeText>
+      </TimeButtons>
     </Container>
   );
 };
