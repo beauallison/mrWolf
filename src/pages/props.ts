@@ -11,6 +11,7 @@ export default () => {
   const [cities, setCities] = useState();
   const [display24HourTime, setDisplay24HourTime] = useState();
   const [displaySeconds, setDisplaySeconds] = useState();
+  const [displayPeriod, setDisplayPeriod] = useState();
   const [displayFontSize, setDisplayFontSize] = useState(1);
   const [colorPalette, setColorPalette] = useState({ value: 'Dusk', label: 'Dusk' });
   const [colorPrimary, setColorPrimary] = useState('#C65B5E');
@@ -31,6 +32,12 @@ export default () => {
     const value = !displaySeconds;
     await setDisplaySeconds(value);
     await Storage.saveDisplaySeconds(value);
+  };
+
+  const toggleDisplayPeriod = async () => {
+    const value = !displayPeriod;
+    await setDisplayPeriod(value);
+    await Storage.saveDisplayPeriod(value);
   };
 
   const updateDisplayFontSize = async (size: number) => {
@@ -95,6 +102,7 @@ export default () => {
       KEY_CITIES,
       KEY_DISPLAY_24HR_TIME,
       KEY_DISPLAY_SECONDS,
+      KEY_DISPLAY_PERIOD,
       KEY_DISPLAY_FONT_SIZE,
       KEY_COLOR_PALETTE,
       KEY_COLOR_PRIMARY,
@@ -108,6 +116,7 @@ export default () => {
     KEY_CITIES && (await setCities(KEY_CITIES));
     KEY_DISPLAY_24HR_TIME && (await setDisplay24HourTime(KEY_DISPLAY_24HR_TIME));
     KEY_DISPLAY_SECONDS && (await setDisplaySeconds(KEY_DISPLAY_SECONDS));
+    KEY_DISPLAY_PERIOD && (await setDisplayPeriod(KEY_DISPLAY_PERIOD));
     KEY_DISPLAY_FONT_SIZE && (await setDisplayFontSize(KEY_DISPLAY_FONT_SIZE));
     KEY_COLOR_PALETTE && (await setColorPalette(KEY_COLOR_PALETTE));
     KEY_COLOR_PRIMARY && (await setColorPrimary(KEY_COLOR_PRIMARY));
@@ -127,6 +136,7 @@ export default () => {
       setCities,
       display24HourTime,
       displaySeconds,
+      displayPeriod,
       displayFontSize,
       colorPalette,
       setColorPalette,
@@ -141,6 +151,7 @@ export default () => {
       load,
       toggleDisplay24HourTime,
       toggleDisplaySeconds,
+      toggleDisplayPeriod,
       updateDisplayFontSize,
       updateColorPalette,
       updateColorPrimary,

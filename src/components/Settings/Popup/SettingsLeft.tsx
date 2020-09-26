@@ -14,6 +14,8 @@ export default ({
   toggleDisplay24HourTime,
   displaySeconds,
   toggleDisplaySeconds,
+  displayPeriod,
+  toggleDisplayPeriod,
   cities,
   setCities,
 }: ISettings) => (
@@ -30,6 +32,10 @@ export default ({
     <SettingContainer>
       <Title>Display Seconds</Title>
       <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
+    </SettingContainer>
+    <SettingContainer>
+      <Title>Display Period</Title>
+      <Checkbox checked={displayPeriod} onChange={toggleDisplayPeriod} />
     </SettingContainer>
     <SelectContainer>
       <Title>Other Cities</Title>

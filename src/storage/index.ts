@@ -10,6 +10,7 @@ const KEY_HOME = 'KEY_HOME';
 const KEY_CITIES = 'KEY_CITIES';
 const KEY_DISPLAY_24HR_TIME = 'KEY_DISPLAY_24HR_TIME';
 const KEY_DISPLAY_SECONDS = 'KEY_DISPLAY_SECONDS';
+const KEY_DISPLAY_PERIOD = 'KEY_DISPLAY_PERIOD';
 const KEY_DISPLAY_FONT_SIZE = 'KEY_DISPLAY_FONT_SIZE';
 const KEY_COLOR_PALETTE = 'KEY_COLOR_PALETTE';
 const KEY_COLOR_PRIMARY = 'KEY_COLOR_PRIMARY';
@@ -29,6 +30,9 @@ export const getDisplay24HrTime = () => Storage.getItem(KEY_DISPLAY_24HR_TIME) a
 
 export const saveDisplaySeconds = (display: boolean) => Storage.saveItem(KEY_DISPLAY_SECONDS, display);
 export const getDisplaySeconds = () => Storage.getItem(KEY_DISPLAY_SECONDS) as boolean;
+
+export const saveDisplayPeriod = (display: boolean) => Storage.saveItem(KEY_DISPLAY_PERIOD, display);
+export const getDisplayPeriod = () => Storage.getItem(KEY_DISPLAY_PERIOD) as boolean;
 
 export const saveDisplayFontSize = (fontSize: number) => Storage.saveItem(KEY_DISPLAY_FONT_SIZE, fontSize);
 export const getDisplayFontSize = () => Storage.getItem(KEY_DISPLAY_FONT_SIZE) as number;
@@ -56,6 +60,7 @@ interface IGetAll {
   KEY_CITIES: ICity[];
   KEY_DISPLAY_24HR_TIME: boolean;
   KEY_DISPLAY_SECONDS: boolean;
+  KEY_DISPLAY_PERIOD: boolean;
   KEY_DISPLAY_FONT_SIZE: boolean;
   KEY_COLOR_PALETTE: string;
   KEY_COLOR_PRIMARY: string;
@@ -71,6 +76,7 @@ export const getAll = () =>
     KEY_CITIES,
     KEY_DISPLAY_24HR_TIME,
     KEY_DISPLAY_SECONDS,
+    KEY_DISPLAY_PERIOD,
     KEY_DISPLAY_FONT_SIZE,
     KEY_COLOR_PALETTE,
     KEY_COLOR_PRIMARY,
