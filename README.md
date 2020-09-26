@@ -35,8 +35,9 @@ Available on the Extension Stores for
 | Edge Extension                          |   ✅   |
 | Theme Support                           |   ✅   |
 | Simple Custom Font Sizes                |   ✅   |
-| Plus / Minus Time Calculator            |   🔜   |
+| Plus / Minus Time Adjuster              |   🔜   |
 | Checklist                               |   ✅   |
+| Sorting of times                        |   🔜   |
 | Advanced Customisation (Fonts, Colours) |   🕒   |
 
 ## Running Locally

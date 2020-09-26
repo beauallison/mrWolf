@@ -74,6 +74,7 @@ describe('storage', () => {
         "KEY_DISPLAY_24HR_TIME": true,
         "KEY_DISPLAY_CHECKLIST": null,
         "KEY_DISPLAY_FONT_SIZE": null,
+        "KEY_DISPLAY_PERIOD": null,
         "KEY_DISPLAY_SECONDS": false,
         "KEY_HOME": Object {
           "country": "United Arab Emirates",

@@ -9,6 +9,8 @@ export default interface ISettings {
   toggleDisplay24HourTime: Function;
   displaySeconds: boolean;
   toggleDisplaySeconds: Function;
+  displayPeriod: boolean;
+  toggleDisplayPeriod: Function;
   displayFontSize: number;
   updateDisplayFontSize: Function;
   colorPalette: string;
@@ -19,4 +21,5 @@ export default interface ISettings {
   updateColorSecondary: Function;
   displayChecklist: boolean;
   toggleDisplayChecklist: Function;
+  currentVersion: string;
 }

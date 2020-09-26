@@ -34,6 +34,7 @@ const Text = styled.p`
 
 export interface IProps extends ICity {
   display24HourTime?: boolean;
+  displayPeriod?: boolean;
 }
 
 export default ({ name, country, ...timeProps }: IProps) => {

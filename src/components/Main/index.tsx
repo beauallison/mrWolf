@@ -29,6 +29,7 @@ export interface IProps {
   home: ICity;
   display24HourTime?: boolean;
   displaySeconds?: boolean;
+  displayPeriod?: boolean;
   displayChecklist?: boolean;
   checklist: IChecklist[];
   updateChecklist: Function;

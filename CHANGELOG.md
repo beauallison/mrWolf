@@ -1,6 +1,13 @@
 # Changelog
 
-## [0.1.0] - 2020-08-13 - "Canterbury"
+## [0.1.1] - 26-09-26 - "Wildey"
+
+### Added
+
+- Small update to add better support for users of 12 hour time
+- Available in Settings, the ability to display am/pm
+
+## [0.1.0] - 2020-09-13 - "Canterbury"
 
 ### Added
 

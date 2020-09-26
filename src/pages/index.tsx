@@ -27,6 +27,7 @@ const Index = () => {
     setCities,
     display24HourTime,
     displaySeconds,
+    displayPeriod,
     displayFontSize,
     colorPalette,
     colorPrimary,
@@ -40,6 +41,7 @@ const Index = () => {
     load,
     toggleDisplay24HourTime,
     toggleDisplaySeconds,
+    toggleDisplayPeriod,
     updateDisplayFontSize,
     updateColorPalette,
     updateColorPrimary,
@@ -67,6 +69,7 @@ const Index = () => {
                   cities={cities}
                   display24HourTime={display24HourTime}
                   displaySeconds={displaySeconds}
+                  displayPeriod={displayPeriod}
                   displayChecklist={displayChecklist}
                   checklist={checklist}
                   updateChecklist={updateChecklist}
@@ -91,6 +94,8 @@ const Index = () => {
               toggleDisplay24HourTime={toggleDisplay24HourTime}
               displaySeconds={displaySeconds}
               toggleDisplaySeconds={toggleDisplaySeconds}
+              displayPeriod={displayPeriod}
+              toggleDisplayPeriod={toggleDisplayPeriod}
               displayFontSize={displayFontSize}
               updateDisplayFontSize={updateDisplayFontSize}
               colorPalette={colorPalette}
@@ -101,6 +106,7 @@ const Index = () => {
               updateColorSecondary={updateColorSecondary}
               displayChecklist={displayChecklist}
               toggleDisplayChecklist={toggleDisplayChecklist}
+              currentVersion={currentVersion}
             />
           </Responsive.Desktop>
         </>
