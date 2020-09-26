@@ -30,12 +30,12 @@ export default ({
       <Checkbox checked={display24HourTime} onChange={toggleDisplay24HourTime} />
     </SettingContainer>
     <SettingContainer>
-      <Title>Display Seconds</Title>
-      <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
+      <Title>Display Period (am/pm)</Title>
+      <Checkbox checked={displayPeriod} onChange={toggleDisplayPeriod} />
     </SettingContainer>
     <SettingContainer>
-      <Title>Display Period</Title>
-      <Checkbox checked={displayPeriod} onChange={toggleDisplayPeriod} />
+      <Title>Display Seconds on Home</Title>
+      <Checkbox checked={displaySeconds} onChange={toggleDisplaySeconds} />
     </SettingContainer>
     <SelectContainer>
       <Title>Other Cities</Title>

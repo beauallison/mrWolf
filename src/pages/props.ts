@@ -22,10 +22,16 @@ export default () => {
 
   const currentVersion = Package.version;
 
-  const toggleDisplay24HourTime = async () => {
+  const toggleDisplay24HourTimeInternal = async () => {
     const value = !display24HourTime;
     await setDisplay24HourTime(value);
     await Storage.saveDisplay24HrTime(value);
+  };
+
+  const toggleDisplayPeriodInternal = async () => {
+    const value = !displayPeriod;
+    await setDisplayPeriod(value);
+    await Storage.saveDisplayPeriod(value);
   };
 
   const toggleDisplaySeconds = async () => {
@@ -34,10 +40,14 @@ export default () => {
     await Storage.saveDisplaySeconds(value);
   };
 
+  const toggleDisplay24HourTime = async () => {
+    await toggleDisplay24HourTimeInternal();
+    displayPeriod === true && (await toggleDisplayPeriodInternal());
+  };
+
   const toggleDisplayPeriod = async () => {
-    const value = !displayPeriod;
-    await setDisplayPeriod(value);
-    await Storage.saveDisplayPeriod(value);
+    await toggleDisplayPeriodInternal();
+    display24HourTime === true && (await toggleDisplay24HourTimeInternal());
   };
 
   const updateDisplayFontSize = async (size: number) => {
