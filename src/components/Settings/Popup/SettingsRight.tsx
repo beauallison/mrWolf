@@ -32,6 +32,7 @@ export default ({
   updateColorSecondary,
   displayChecklist,
   toggleDisplayChecklist,
+  currentVersion,
 }: ISettings) => {
   return (
     <SettingsRight>
@@ -75,7 +76,7 @@ export default ({
         </>
       )}
       <Title>
-        {'Version 0.1.0. '}
+        Version {currentVersion}.{' '}
         <GithubLink href="https://github.com/beauallison/mrWolf" target="_blank">
           Source Code
         </GithubLink>

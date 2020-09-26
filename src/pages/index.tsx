@@ -106,6 +106,7 @@ const Index = () => {
               updateColorSecondary={updateColorSecondary}
               displayChecklist={displayChecklist}
               toggleDisplayChecklist={toggleDisplayChecklist}
+              currentVersion={currentVersion}
             />
           </Responsive.Desktop>
         </>

@@ -21,4 +21,5 @@ export default interface ISettings {
   updateColorSecondary: Function;
   displayChecklist: boolean;
   toggleDisplayChecklist: Function;
+  currentVersion: string;
 }
