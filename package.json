@@ -21,7 +21,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@percy/agent": "^0.28.2",
     "@svgr/webpack": "^5.4.0",
-    "@types/jest": "^26.0.13",
+    "@types/jest": "^27.4.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-emotion": "^10.0.33",
     "copy-webpack-plugin": "^6.1.0",
