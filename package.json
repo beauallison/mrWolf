@@ -48,7 +48,7 @@
     "core-js": "^3.6.5",
     "emotion-theming": "^10.0.27",
     "lodash": "^4.17.20",
-    "moment": "^2.27.0",
+    "moment": "^2.29.3",
     "moment-timezone": "^0.5.31",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
