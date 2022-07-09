@@ -2,6 +2,8 @@
 
 ## [0.1.2] - 2022-07-09
 
+### Changed
+
 - Maintaince update for packages
 
 ## [0.1.1] - 2020-09-26 - "Wildey"
