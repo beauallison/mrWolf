@@ -1,6 +1,10 @@
 # Changelog
 
-## [0.1.1] - 26-09-26 - "Wildey"
+## [0.1.2] - 2022-07-09
+
+- Maintaince update for packages
+
+## [0.1.1] - 2020-09-26 - "Wildey"
 
 ### Added
 
