@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Maintaince update for packages
+- Maintenance update for packages
 
 ## [0.1.1] - 2020-09-26 - "Wildey"
 
