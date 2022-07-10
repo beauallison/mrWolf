@@ -49,7 +49,7 @@ This app requires Node and NPM to build and run.
 git clone https://github.com/beauallison/mrWolf/
 cd mrWolf
 npm install
-npm run watch
+npm run build
 ```
 
 ### 2. Run
