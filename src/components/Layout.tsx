@@ -1,6 +1,6 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
-import { ThemeProvider } from 'emotion-theming';
+import { Global, css } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
 import { theme } from './theme';
 
 export interface ILayout {

@@ -1,7 +1,6 @@
 # Mr Wolf
 
 ![CI](https://github.com/beauallison/mrWolf/workflows/CI/badge.svg)
-[![Percy.io](https://percy.io/static/images/percy-badge.svg)](https://percy.io/beauallison/mrWolf)
 
 Browser Extension and Web App made with React, Emotion, & TypeScript for helping you sync timezones across the globe.
 
@@ -50,7 +49,7 @@ This app requires Node and NPM to build and run.
 git clone https://github.com/beauallison/mrWolf/
 cd mrWolf
 npm install
-npm run watch
+npm run build
 ```
 
 ### 2. Run
@@ -60,6 +59,7 @@ npm run watch
 3. Click `This Firefox`
 4. Click `Load Temporary Add-on...`
 5. Open the `build` folder in the project directory
+6. Open the `manifest.json` file
 
 For more information view the instructions at [Mozilla](https://developer.mozilla.org/en-us/docs/tools/about:debugging)
 

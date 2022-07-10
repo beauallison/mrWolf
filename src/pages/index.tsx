@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
@@ -115,7 +115,8 @@ const Index = () => {
   );
 };
 
-const root = document.createElement('div');
-document.body.appendChild(root);
+const container = document.createElement('div');
+document.body.appendChild(container);
 
-ReactDOM.render(<Index />, root);
+const root = createRoot(container);
+root.render(<Index />);
