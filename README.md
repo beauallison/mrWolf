@@ -59,6 +59,7 @@ npm run watch
 3. Click `This Firefox`
 4. Click `Load Temporary Add-on...`
 5. Open the `build` folder in the project directory
+6. Open the `manifest.json` file
 
 For more information view the instructions at [Mozilla](https://developer.mozilla.org/en-us/docs/tools/about:debugging)
 
